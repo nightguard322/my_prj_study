@@ -1,0 +1,11 @@
+php_flag magic_quotes_gps Off - отключение двойного экранирования кавычек
+
+AddDefaultCharset utf-8 - Стандартная кодировка utf-8
+
+DirectoryIndex index.php Индексировать только index.php
+
+RewriteEngine on Механизм перенаправления ссылок и параметров (запросов)-> включить
+
+RewriteCond %(REQUEST_FILENAME) !-f -> правило - если пользователь запрашивает не файл
+
+RewriteRule ^(.*) index.php -> то перенаправлять все на index.php
