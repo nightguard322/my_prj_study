@@ -12,7 +12,22 @@ const ADMIN_CSS_JS = [
     'styles' => [],
     'scripts' => []
 ];
-const ADMIN_CSS_JS = [
+const USER_CSS_JS = [
     'styles' => [],
     'scripts' => []
 ];
+
+use core\base\exeptions\RouteExeption;
+
+function autoLoadMainClasses($class_name)
+{
+    $class_name = str_replace("\\", '/', $class_name);
+
+    if(!@include $class_name . '.php'){
+        throw new RouteExeption('Не верное имя файла для подключения -' . $class_name);
+    }
+    // require_once('$class_name);
+
+}
+
+spl_autoload_register('autoLoadMainClasses');
