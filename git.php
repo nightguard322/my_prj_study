@@ -42,5 +42,9 @@ git status
 9. Настраиваем доступ к GitHub
     настраиваем конфиг: git config --global.user user.name
     и email git config --global.user user.email
-
+10. Чтобы залить локальные данные на сервер команда
+        настроить удаленный репозиторий
+            git remote -u origin branch_name repo_url 
+        и отправить данные 
+            git push -u origin branch_name
 
