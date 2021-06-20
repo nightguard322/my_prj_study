@@ -37,4 +37,10 @@ git status
 
 8.  Для слияния веток - команда git merge имя_ветки
 
+--GitHub--
+
+9. Настраиваем доступ к GitHub
+    настраиваем конфиг: git config --global.user user.name
+    и email git config --global.user user.email
+
 
