@@ -85,12 +85,14 @@ class Settings
 
         foreach($this as $name => $item){
             $property = $class::get($name);
-            
+
             if(is_array($property) && is_array($item)){
-                 
+                $basePropeties = $this->arrayMergeRecursive($this->$name, $property);
+                continue;
             }
+            if(!$property) $basePropeties[$name] = $this->$name;
         }
-        exit();
+        return $basePropeties;
     }
 
     public function arrayMergeRecursive()
@@ -101,9 +103,23 @@ class Settings
         $base = array_shift($arrays);
 
         foreach($arrays as $array){
+            foreach($array as $key => $value){
+                if(is_array($value) && is_array($base[$key])){
+                    $base[$key] = $this->arrayMergeRecursive($base[$key], $value);
+                    
+
+                }else{
+                    if(is_int($key)){
+                        if(!in_array($value, $base)){
+                             array_push($base, $value);}
+                        continue;
+                    }
+                    $base['key'] = $value;
+                }
+            }
             
         }
-    
+        return $base;
     }
 
 }

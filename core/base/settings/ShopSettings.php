@@ -6,9 +6,8 @@ use core\base\settings\Settings;
 
 class ShopSettings
 {
-    
-    static private $_instance; 
     public $baseSettings;
+    static private $_instance; 
 
     private $templateArr = [
         'text' => ['name', 'phone', 'address', 'price', 'short'],
@@ -27,11 +26,19 @@ class ShopSettings
         }
         self::$_instance = new self;
         self::$_instance->$baseSettings = Settings::instance();
-        self::$_instance->$baseSettings->cluePropteties(get_class());
+
+        $baseProperites = self::$_instance->$baseSettings->cluePropteties(get_class());
+        self::$_instance->setProperty($baseProperites);
         return self::$_instance;
     }
 
-    
+    protected function setProperty($properties){
+        if($properties){
+            foreach ($properties as $name => $property){
+                $this->$name = $property;
+            }
+        }
+    }
 
     private function __clone()
     {
