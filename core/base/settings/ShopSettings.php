@@ -35,9 +35,9 @@ class ShopSettings
             return self::$_instance;    
         }
         self::$_instance = new self;
-        self::$_instance->$baseSettings = Settings::instance();
+        self::$_instance->baseSettings = Settings::instance();
 
-        $baseProperites = self::$_instance->$baseSettings->cluePropteties(get_class());
+        $baseProperites = self::$_instance->baseSettings->cluePropteties(get_class());
         self::$_instance->setProperty($baseProperites);
         return self::$_instance;
     }

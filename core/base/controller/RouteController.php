@@ -25,21 +25,21 @@ class RouteController
         $route = [];
 
         if(!empty($arr[0])){
-            if($this->$routes[$var]['routes'][$arr[0]]){
-                $route = explode("/", $this->$routes[$var]['routes'][$arr[0]]);
+            if($this->routes[$var]['routes'][$arr[0]]){
+                $route = explode("/", $this->routes[$var]['routes'][$arr[0]]);
 
-                $this->$controller .= ucfirst($route[0] . 'Controller'); 
+                $this->controller .= ucfirst($route[0] . 'Controller'); 
             
             }else{
-                $this->$controller .= ucfirst($arr[0] . 'Controller'); 
+                $this->controller .= ucfirst($arr[0] . 'Controller'); 
             }
         
         }else{
-            $this->$controller .= $this->$routes['default']['controller']; 
+            $this->controller .= $this->routes['default']['controller']; 
         }
 
-        $this->$inputMethod = $routes[1] ? $routes[1] : $this->$routes['default']['inputMethod'];
-        $this->$outputMethod = $routes[2] ? $routes[2] : $this->$routes['default']['outputMethod'];
+        $this->inputMethod = $route[1] ? $route[1] : $this->routes['default']['inputMethod'];
+        $this->outputMethod = $route[2] ? $route[2] : $this->routes['default']['outputMethod'];
 
         return;
     }
@@ -64,20 +64,20 @@ class RouteController
 
         if($path === PATH){
 
-            $this->$routes = Settings::get('routes');
+            $this->routes = Settings::get('routes');
 
-            if(!$this->$routes) throw new RouteExсeption('Сайт находится на техническом обслуживании');
+            if(!$this->routes) throw new RouteExсeption('Сайт находится на техническом обслуживании');
                 
-            if(strpos($adress_str, $this->$routes['admin']['alias'] ) === strlen(PATH)){
+            if(strpos($adress_str, $this->routes['admin']['alias'] ) === strlen(PATH)){
         
 
             }else{
 
                 $url = explode('/', substr($adress_str, strlen(PATH)));
 
-                $hrUrl = $this->$routes['user']['hrUrl'];
+                $hrUrl = $this->routes['user']['hrUrl'];
 
-                $this->controller = $routes['user']['path'];
+                $this->controller = $this->routes['user']['path'];
 
                 $route = 'user';
            

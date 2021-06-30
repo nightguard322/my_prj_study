@@ -65,7 +65,7 @@
             }
             далее проверяем, не админский ли контроллер сейчас нужно подключать
             
-            if(strpos($address_str), $this->routes['admin']['alias'] ) === strlen(PATH)
+            if(strpos($address_str, $this->routes['admin']['alias'] ) === strlen(PATH)
             //Если до начала значения ключа alias в массиве admin в строке 
             //$address_str кол-во символов = длине PATH
             далее разбираем админпанель
