@@ -2,21 +2,31 @@
 
 namespace core\base\settings;
 
-use core\base\settings\Settings;
+// use core\base\settings\Settings;
 
 class ShopSettings
 {
-    public $baseSettings;
+    
     static private $_instance; 
+    private $baseProperites;
+
+    private $routes = [
+        
+        'admin' => [
+            'name' => 'new',  
+        ]
+    ];
+
 
     private $templateArr = [
         'text' => ['name', 'phone', 'address', 'price', 'short'],
         'textarea' => ['content', 'keywords', 'goods_content']
     ];
 
-    static public function get($propety)
+    static public function get($property)
     {
-        return self::instance()->$propety;
+        if(isset(self::instance()->$property))
+        return self::instance()->$property;
     }
 
     static public function instance()

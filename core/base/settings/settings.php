@@ -12,7 +12,7 @@ class Settings
     private $routes = [
         
         'admin' => [
-            'name' => 'admin',
+            'alias' => 'admin',
             'path' => 'core/base/admin/controller/',
             'hrUrl' => false    
         ],
@@ -81,18 +81,20 @@ class Settings
     public function cluePropteties($class)
     {
 
-        $basePropeties = [];
+        $baseProperites = [];
 
         foreach($this as $name => $item){
+            
             $property = $class::get($name);
 
+           
             if(is_array($property) && is_array($item)){
-                $basePropeties = $this->arrayMergeRecursive($this->$name, $property);
+                $baseProperites[$name] = $this->arrayMergeRecursive($this->$name, $property);
                 continue;
             }
-            if(!$property) $basePropeties[$name] = $this->$name;
+            if(!$property) $baseProperites[$name] = $this->$name;
         }
-        return $basePropeties;
+        return $baseProperites;
     }
 
     public function arrayMergeRecursive()
@@ -106,15 +108,13 @@ class Settings
             foreach($array as $key => $value){
                 if(is_array($value) && is_array($base[$key])){
                     $base[$key] = $this->arrayMergeRecursive($base[$key], $value);
-                    
-
                 }else{
                     if(is_int($key)){
-                        if(!in_array($value, $base)){
-                             array_push($base, $value);}
-                        continue;
-                    }
-                    $base['key'] = $value;
+                        if(!in_array($value, $base)) array_push($base, $value);
+                        
+                    }       
+                    $base[$key] = $value;
+                    continue;
                 }
             }
             

@@ -17,14 +17,14 @@ const USER_CSS_JS = [
     'scripts' => []
 ];
 
-use core\base\exeptions\RouteExeption;
+use core\base\exсeptions\RouteExсeption;
 
 function autoLoadMainClasses($class_name)
 {
     $class_name = str_replace("\\", '/', $class_name);
 
     if(!@include $class_name . '.php'){
-        throw new RouteExeption('Не верное имя файла для подключения -' . $class_name);
+         throw new RouteExсeption('Не верное имя файла для подключения - ' . $class_name);
     }
     // require_once('$class_name);
 

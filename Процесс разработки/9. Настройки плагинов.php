@@ -57,7 +57,8 @@ class ShopSettings
             $property = $class::get($name);
             
             if(is_array($property) && is_array($item)){
-                 
+                $baseProperites[$name] = $this->arrayMergeRecursive($this->$name, $property); склеивание двух массивов в 
+                массив настроек $baseProperites по ключу $name (название свойства, при каждой итерации обновляется)
             }
         }
         exit();
@@ -81,3 +82,6 @@ class ShopSettings
     }
 
 
+И в конце в методе cluePropteties добавляем continue; в цикле if(is_array) и 
+if(!$property) $baseProperites[$name] = $this->$name; чтобы в массив настроек попадали данные (свойства), 
+которые не определены изначально в расширении (плагине)
