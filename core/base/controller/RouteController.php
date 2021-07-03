@@ -79,6 +79,22 @@ class RouteController
                     $plugin = array_shift($url);
 
                     $pluginSettings = $this->routes['plugins']['path'] . ucfirst($plugin . 'Settings');
+
+                    if(file_exists($_SERVER['DOCUMENT_ROOT'] . PATH . $pluginSettings . '.php')){
+                        
+                        $pluginSettings = str_replace('/', '\\', $pluginSettings);
+                        $this->routes = $pluginSettings::get('routes');
+
+                        $dir = $this->routes['plugins']['dir'] ? '/' . $this->routes['plugins']['dir'] . '.' : "/";
+                        $dir = str_replace("//", '/', $dir);
+
+                        $this->controller = $this->routes['plugins']['path'] . $plugin . $dir;
+                        
+                        $hrUrl = $this->routes['plugins']['hrUrl']; 
+
+                        $route = "plugins";
+                    }
+
                     
                 }else{
                     
@@ -104,7 +120,28 @@ class RouteController
             $this->createRoute($route, $url);
 
         //Если до начала значения ключа alias в массиве admin в строке $address_str кол-во символов = длине PATH
-       
+            if($url[1]){
+                $count = count($url);
+                $key = '';
+
+                if($hrUrl){
+                    $i = 1;
+                }
+                else{
+                    $this->parameters['alias'] = $url[1];
+                    $i = 2;
+                }
+                for(;$i < $count; $i++){
+                    if(!$key){
+                        $key = $url[$i];
+                        $this->parameters[$key] = '';
+                    }
+                    else{
+                        $this->parameters[$key] = $url[$i];
+                        $key = '';
+                    }
+                }
+            }
  
         }
         
