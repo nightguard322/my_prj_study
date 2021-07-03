@@ -25,7 +25,9 @@ class RouteController
         $route = [];
 
         if(!empty($arr[0])){
-            if($this->routes[$var]['routes'][$arr[0]]){
+
+            if(@$this->routes[$var]['routes'][$arr[0]]){
+                
                 $route = explode("/", $this->routes[$var]['routes'][$arr[0]]);
 
                 $this->controller .= ucfirst($route[0] . 'Controller'); 
@@ -69,7 +71,24 @@ class RouteController
             if(!$this->routes) throw new RouteExсeption('Сайт находится на техническом обслуживании');
                 
             if(strpos($adress_str, $this->routes['admin']['alias'] ) === strlen(PATH)){
-        
+               
+                $url = explode('/', substr($adress_str, strlen(PATH . $this->routes['admin']['alias']) + 1)); 
+
+                if($url[0] && is_dir($_SERVER['DOCUMENT_ROOT'] . PATH . $this->routes['plugins']['path'] . $url[0])){
+                    
+                    $plugin = array_shift($url);
+
+                    $pluginSettings = $this->routes['plugins']['path'] . ucfirst($plugin . 'Settings');
+                    
+                }else{
+                    
+                    $this->controller = $this->routes['admin']['path'];
+
+                    $hrUrl = $this->routes['admin']['hrUrl'];
+
+                    $route = "admin";   
+
+                }
 
             }else{
 

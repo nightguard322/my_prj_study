@@ -14,17 +14,21 @@ class Settings
         'admin' => [
             'alias' => 'admin',
             'path' => 'core/base/admin/controller/',
-            'hrUrl' => false    
+            'hrUrl' => false,
+            'routes' =>  
+            [    
+
+            ]    
         ],
 
-        'settings' => 
+        'settings' => //путь к настройкам плагинов
         [
-            'path' => 'core/base/settings',
+            'path' => 'core/base/settings/',
         ],
 
         'plugins' =>
         [
-            'path' => 'core/plugins',
+            'path' => 'core/plugins/',
             'hrUrl' => false 
         ],
         'user' =>
