@@ -26,17 +26,22 @@ class RouteController
 
         if(!empty($arr[0])){
 
-            if(@$this->routes[$var]['routes'][$arr[0]]){
+            if($this->routes[$var]['routes'][$arr[0]]){
+
+                print_arr($this->routes[$var]['routes'][$arr[0]]);
                 
                 $route = explode("/", $this->routes[$var]['routes'][$arr[0]]);
 
                 $this->controller .= ucfirst($route[0] . 'Controller'); 
+                echo "Маршрут найден";
             
             }else{
+                
                 $this->controller .= ucfirst($arr[0] . 'Controller'); 
+                echo "Маршрут взят со строки браузера";
             }
-        
         }else{
+            echo "Маршрут дефолтный";
             $this->controller .= $this->routes['default']['controller']; 
         }
 
@@ -70,6 +75,9 @@ class RouteController
 
             if(!$this->routes) throw new RouteExсeption('Сайт находится на техническом обслуживании');
                 
+            echo 'это равно - ' . strpos($adress_str, 'admin') . ', а '; 
+            
+            echo 'хрень = ' . strlen(PATH);
             if(strpos($adress_str, $this->routes['admin']['alias'] ) === strlen(PATH)){
                
                 $url = explode('/', substr($adress_str, strlen(PATH . $this->routes['admin']['alias']) + 1)); 
@@ -79,8 +87,10 @@ class RouteController
                     $plugin = array_shift($url);
 
                     $pluginSettings = $this->routes['plugins']['path'] . ucfirst($plugin . 'Settings');
-
+                    
+                    echo  $pluginSettings;
                     if(file_exists($_SERVER['DOCUMENT_ROOT'] . PATH . $pluginSettings . '.php')){
+                        echo 'мы где надо';
                         
                         $pluginSettings = str_replace('/', '\\', $pluginSettings);
                         $this->routes = $pluginSettings::get('routes');
@@ -93,11 +103,12 @@ class RouteController
                         $hrUrl = $this->routes['plugins']['hrUrl']; 
 
                         $route = "plugins";
+                        
                     }
 
                     
                 }else{
-                    
+                    echo 'мы в жопе';
                     $this->controller = $this->routes['admin']['path'];
 
                     $hrUrl = $this->routes['admin']['hrUrl'];
@@ -107,24 +118,26 @@ class RouteController
                 }
 
             }else{
-
+                echo 'мы в полной жопе';
                 $url = explode('/', substr($adress_str, strlen(PATH)));
 
                 $hrUrl = $this->routes['user']['hrUrl'];
+                
 
                 $this->controller = $this->routes['user']['path'];
 
                 $route = 'user';
            
             }
+
             $this->createRoute($route, $url);
 
         //Если до начала значения ключа alias в массиве admin в строке $address_str кол-во символов = длине PATH
             if($url[1]){
                 $count = count($url);
                 $key = '';
-
-                if($hrUrl){
+                
+                if(!$hrUrl){
                     $i = 1;
                 }
                 else{
@@ -142,9 +155,11 @@ class RouteController
                     }
                 }
             }
- 
+                exit();
         }
         
+        
+
         else{
             try{ 
                 throw new \Exception('Некорректная директория сайта');

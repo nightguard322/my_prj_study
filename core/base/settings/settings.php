@@ -17,7 +17,7 @@ class Settings
             'hrUrl' => false,
             'routes' =>  
             [    
-
+                'products' => 'goods/getGoods/sale'
             ]    
         ],
 
@@ -38,7 +38,7 @@ class Settings
             'hrUrl' => true,
             'routes' =>  
                 [    
-
+                    'catalog' => 'site/inbox/outbox'
                 ]
         
         ],
