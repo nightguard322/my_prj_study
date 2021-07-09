@@ -13,11 +13,12 @@ class Settings
         
         'admin' => [
             'alias' => 'admin',
-            'path' => 'core/base/admin/controller/',
+            'path' => 'core/admin/controller/',
             'hrUrl' => false,
+            'dir' => '',
             'routes' =>  
             [    
-                'products' => 'goods/getGoods/sale'
+                'products' => 'items/getGoods/sale'
             ]    
         ],
 
@@ -34,7 +35,7 @@ class Settings
         ],
         'user' =>
         [
-            'path' => 'core/base/user/controller/',
+            'path' => 'core/user/controller/',
             'hrUrl' => true,
             'routes' =>  
                 [    
@@ -106,6 +107,7 @@ class Settings
     {
 
         $arrays = func_get_args();
+        print_arr($arrays);
 
         $base = array_shift($arrays);
 

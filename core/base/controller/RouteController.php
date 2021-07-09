@@ -24,11 +24,12 @@ class RouteController
     private function createRoute($var, $arr){
         $route = [];
 
+
         if(!empty($arr[0])){
+           
 
             if($this->routes[$var]['routes'][$arr[0]]){
 
-                print_arr($this->routes[$var]['routes'][$arr[0]]);
                 
                 $route = explode("/", $this->routes[$var]['routes'][$arr[0]]);
 
@@ -41,7 +42,7 @@ class RouteController
                 echo "Маршрут взят со строки браузера";
             }
         }else{
-            echo "Маршрут дефолтный";
+            echo "<br> Маршрут дефолтный";
             $this->controller .= $this->routes['default']['controller']; 
         }
 
@@ -61,6 +62,7 @@ class RouteController
 
     public function __construct()
     {
+        $route = '';
         $adress_str = $_SERVER['REQUEST_URI'];
         
         if((strrpos($adress_str, '/') === strlen($adress_str) - 1) && strrpos($adress_str, '/') !== (strlen(PATH) - 1))
@@ -75,9 +77,6 @@ class RouteController
 
             if(!$this->routes) throw new RouteExсeption('Сайт находится на техническом обслуживании');
                 
-            echo 'это равно - ' . strpos($adress_str, 'admin') . ', а '; 
-            
-            echo 'хрень = ' . strlen(PATH);
             if(strpos($adress_str, $this->routes['admin']['alias'] ) === strlen(PATH)){
                
                 $url = explode('/', substr($adress_str, strlen(PATH . $this->routes['admin']['alias']) + 1)); 
@@ -86,11 +85,10 @@ class RouteController
                     
                     $plugin = array_shift($url);
 
-                    $pluginSettings = $this->routes['plugins']['path'] . ucfirst($plugin . 'Settings');
-                    
-                    echo  $pluginSettings;
+                    $pluginSettings = $this->routes['settings']['path'] . ucfirst($plugin . 'Settings');
+
                     if(file_exists($_SERVER['DOCUMENT_ROOT'] . PATH . $pluginSettings . '.php')){
-                        echo 'мы где надо';
+                        echo '   .:мы в плагинах:.';
                         
                         $pluginSettings = str_replace('/', '\\', $pluginSettings);
                         $this->routes = $pluginSettings::get('routes');
@@ -103,12 +101,11 @@ class RouteController
                         $hrUrl = $this->routes['plugins']['hrUrl']; 
 
                         $route = "plugins";
-                        
                     }
 
                     
                 }else{
-                    echo 'мы в жопе';
+                    echo '   .:мы в админке:.';
                     $this->controller = $this->routes['admin']['path'];
 
                     $hrUrl = $this->routes['admin']['hrUrl'];
@@ -118,7 +115,7 @@ class RouteController
                 }
 
             }else{
-                echo 'мы в полной жопе';
+                echo '   .:мы в юзерской части:.';
                 $url = explode('/', substr($adress_str, strlen(PATH)));
 
                 $hrUrl = $this->routes['user']['hrUrl'];
@@ -129,7 +126,6 @@ class RouteController
                 $route = 'user';
            
             }
-
             $this->createRoute($route, $url);
 
         //Если до начала значения ключа alias в массиве admin в строке $address_str кол-во символов = длине PATH
