@@ -35,17 +35,18 @@ class Settings
         ],
         'user' =>
         [
-            'path' => 'core/user/controller/',
+            'path' => 'core/user/controllers/',
             'hrUrl' => true,
             'routes' =>  
                 [    
+                    'basePath' => 'index/basicInput',
                     'catalog' => 'site/inbox/outbox'
                 ]
         
         ],
         'default' => 
         [
-           'controller' => 'indexController',
+           'controller' => 'IndexController',
            'inputMethod' => 'inputData',
            'outputMethod' => 'outputData' 
         ]    
@@ -107,7 +108,6 @@ class Settings
     {
 
         $arrays = func_get_args();
-        print_arr($arrays);
 
         $base = array_shift($arrays);
 

@@ -15,7 +15,11 @@ class ShopSettings
         'plugins' =>
         [
             'path' => 'core/plugins/',
- 
+            'dir' => false,
+            'routes' => 
+            [
+                'phones' => 'catalog/pullCat/pushCat'
+            ]
         ],
     ];
 
