@@ -6,8 +6,7 @@ use core\base\settings\ShopSettings;
 
 class Settings
 {
-
-    static private $_instance;
+    use \core\base\controller\Singleton;
 
     private $routes = [
         
@@ -35,7 +34,7 @@ class Settings
         ],
         'user' =>
         [
-            'path' => 'core/user/controllers/',
+            'path' => 'core/user/controller/',
             'hrUrl' => true,
             'routes' =>  
                 [    
@@ -49,37 +48,17 @@ class Settings
            'controller' => 'IndexController',
            'inputMethod' => 'inputData',
            'outputMethod' => 'outputData' 
-        ]    
+        ],
+        'p' => ['1','2','3']
         
         
     ];
 
     private $templateArr = [
-        'text' => ['name', 'phone', 'address'],
+        'text' => ['name', 'phone', 'address', 'secret'],
         'textarea' => ['content', 'keywords']
     ];
     
-    
-
-    private function __clone()
-    {
-
-    }
-
-    static public function instance()
-    {
-        if(self::$_instance instanceof self){
-            return self::$_instance;
-        }
-
-        return self::$_instance = new self;
-    }
-    
-    private function __contstruct()
-    {
-
-    }
-
     static public function get($propety)
     {
         return self::instance()->$propety;
@@ -110,22 +89,22 @@ class Settings
         $arrays = func_get_args();
 
         $base = array_shift($arrays);
-
         foreach($arrays as $array){
             foreach($array as $key => $value){
                 if(is_array($value) && is_array($base[$key])){
+                    
                     $base[$key] = $this->arrayMergeRecursive($base[$key], $value);
                 }else{
                     if(is_int($key)){
-                        if(!in_array($value, $base)) array_push($base, $value);
-                        
-                    }       
+                        if(!in_array($value, $base)) $base[] = $value;
+                        continue;
+                    }     
                     $base[$key] = $value;
-                    continue;
                 }
             }
             
         }
+
         return $base;
     }
 

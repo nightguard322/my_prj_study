@@ -1,8 +1,8 @@
 <?php
 
-namespace core\user\controllers;
+namespace core\user\controller;
 
-use core\base\controller\BaseController ;
+use core\base\controller\BaseController;
 
 class IndexController extends BaseController
 {
@@ -11,6 +11,7 @@ class IndexController extends BaseController
         $content = $this->render('', compact('name'));
         $header = $this->render(TEMPLATE . 'header');
         $footer = $this->render(TEMPLATE . 'footer');
+        $this->init();
         
         return compact('header', 'content', 'footer');
     }

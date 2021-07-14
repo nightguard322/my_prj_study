@@ -2,12 +2,15 @@
 
 namespace core\base\settings;
 
-// use core\base\settings\Settings;
+use \core\base\controller\BaseMethods;
+use \core\base\controller\Singleton;
 
 class ShopSettings
+
 {
-    
-    static private $_instance; 
+    use Singleton;
+    use BaseMethods;
+     
     private $baseProperites;
 
     private $routes = [
@@ -21,6 +24,7 @@ class ShopSettings
                 'phones' => 'catalog/pullCat/pushCat'
             ]
         ],
+        'p' => ['4','5','6']
     ];
 
 
@@ -31,17 +35,16 @@ class ShopSettings
 
     static public function get($property)
     {
-        if(isset(self::instance()->$property))
-        return self::instance()->$property;
+        if(isset(self::getInstance()->$property))
+        return self::getInstance()->$property;
     }
 
-    static public function instance()
+    static private function getInstance()
     {
         if(self::$_instance instanceof self){
             return self::$_instance;    
         }
-        self::$_instance = new self;
-        self::$_instance->baseSettings = Settings::instance();
+        self::instance()->baseSettings = Settings::instance();
 
         $baseProperites = self::$_instance->baseSettings->cluePropteties(get_class());
         self::$_instance->setProperty($baseProperites);
@@ -56,13 +59,4 @@ class ShopSettings
         }
     }
 
-    private function __clone()
-    {
-
-    }
-
-    private function __contstruct()
-    {
-
-    }
 }
