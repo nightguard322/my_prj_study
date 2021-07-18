@@ -1,0 +1,18 @@
+
+
+fault:2021-07-16 13:27:45-Не верное имя файла для подключения - core/user/controller/IndexController
+file C:\xampp\htdocs\project\core\base\settings\internal_settings.php
+at line 27
+
+fault:2021-07-16 13:27:45-Class core\user\controller\IndexController does not exist
+file C:\xampp\htdocs\project\core\base\controller\BaseController.php
+at line 56
+
+fault:2021-07-16 13:28:16-Не верное имя файла для подключения - core/user/controller/IndexController
+file C:\xampp\htdocs\project\core\base\settings\internal_settings.php
+at line 27
+
+fault:2021-07-16 13:28:16-Class core\user\controller\IndexController does not exist
+file C:\xampp\htdocs\project\core\base\controller\BaseController.php
+at line 56
+

@@ -43,7 +43,8 @@ trait BaseMethods
 
         $str = $event . ':' . $dateTime->format('Y-m-d H:i:s') . '-' . $message . "\r\n";
 
-        file_put_contents('log/' . $file, $str, FILE_APPEND);
+        file_put_contents('logs/' . $file, $str, FILE_APPEND);
+
     }
 
 

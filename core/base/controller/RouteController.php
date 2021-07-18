@@ -57,7 +57,6 @@ class RouteController extends BaseController
         if($path === PATH){
 
             $this->routes = Settings::get('routes');
-            $this->templateArr = Settings::get('templateArr');
 
             if(!$this->routes) throw new RouteExсeption('Отсутствуют маршруты в базовых настройках');
                 

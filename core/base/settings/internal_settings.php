@@ -1,7 +1,7 @@
 <?php
 
 const TEMPLATE = 'templates/default/';
-const ADMIN_TEMPLATE = 'core/admin/views/';
+const ADMIN_TEMPLATE = 'core/admin/view/';
 const COOKIE_VERSION = '1.0.0';
 const CRYPT_KET = '';
 const COOKIE_TIME = 0;
@@ -24,7 +24,7 @@ function autoLoadMainClasses($class_name)
     $class_name = str_replace("\\", '/', $class_name);
 
     if(!@include $class_name . '.php'){
-         throw new RouteExсeption('Не верное имя файла для подключения - ' . $class_name);
+        new RouteExсeption('Не верное имя файла для подключения - ' . $class_name);
     }
 
 }
