@@ -1,0 +1,15 @@
+fault:2021-07-18 17:30:06-Не удалость подключиться к базе данных 1049Unknown database 'cms1'
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 19
+fault:2021-07-18 17:31:01-Не удалость подключиться к базе данных 1049Unknown database 'cms1'
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 19
+fault:2021-07-18 17:32:23-Не удалость подключиться к базе данных 1049Unknown database 'cms1'
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 19
+fault:2021-07-18 17:32:53-Не удалость подключиться к базе данных 1049 Unknown database 'cms1'
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 19
+fault:2021-07-18 17:33:06-Не удалость подключиться к базе данных 1049 : Unknown database 'cms1'
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 19

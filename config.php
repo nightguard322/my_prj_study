@@ -7,5 +7,5 @@ const PATH = "/project/";
 
 const HOST = 'localhost';
 const USER = 'root';
-const PASS = '';
-const DBNAME = 'db_project';
+const PASSWORD = '';
+const DB_NAME = 'cms1';

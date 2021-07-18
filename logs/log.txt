@@ -1,0 +1,25 @@
+
+fault:2021-07-18 17:05:01-Такой страницы не существует
+file C:\xampp\htdocs\project\core\base\settings\internal_settings.php
+at line 28
+fault:2021-07-18 17:11:07-Такой страницы не существует
+file C:\xampp\htdocs\project\core\base\settings\internal_settings.php
+at line 28
+fault:2021-07-18 17:11:36-Такой страницы не существует
+file C:\xampp\htdocs\project\core\base\settings\internal_settings.php
+at line 28
+fault:2021-07-18 17:11:39-Такой страницы не существует
+file C:\xampp\htdocs\project\core\base\settings\internal_settings.php
+at line 28
+fault:2021-07-18 17:12:11-Такой страницы не существует
+file C:\xampp\htdocs\project\core\base\settings\internal_settings.php
+at line 28
+fault:2021-07-18 17:15:00-Такой страницы не существует
+file C:\xampp\htdocs\project\core\base\settings\internal_settings.php
+at line 29
+fault:2021-07-18 17:17:43-Такой страницы не существует
+file C:\xampp\htdocs\project\core\base\settings\internal_settings.php
+at line 34
+fault:2021-07-18 17:18:16-Такой страницы не существует
+file C:\xampp\htdocs\project\core\base\settings\internal_settings.php
+at line 35

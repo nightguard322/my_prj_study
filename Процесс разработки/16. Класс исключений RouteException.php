@@ -8,10 +8,26 @@ if(!$this->routes) throw new RouteExсeption('Отсутствуют маршр�
 
 также заменим  else{
     try{ 
-        throw new RouteExсeption('Некорректная директория сайта');
+        throw new RouteExсeption('Некорректная директория сайта', 2);
     }
     catch(RouteExсeption $e){
         exit($e->getMessage());
     }
 
-    на 
+    Далее пишем класс RouteExсeption
+
+    namespace core\base\exсeptions;
+
+class RouteExсeption extends \Exception
+
+{
+
+    protected $messages;
+
+    use BaseMethods;
+
+    public function __construct($message = '', $code = ''){ -- 
+
+        parent::__construct($message = '', $code = ''); --вызов родительского класса
+    }
+}

@@ -141,7 +141,7 @@ class RouteController extends BaseController
         
         else{
             try{ 
-                throw new \Exception('Некорректная директория сайта');
+                throw new \Exception('Некорректная директория сайта', 1);
             }
             catch(\Exception $e){
                 exit($e->getMessage());

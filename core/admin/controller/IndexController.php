@@ -3,17 +3,13 @@
 namespace core\user\controller;
 
 use core\base\controller\BaseController;
-use core\admin\models\Model;
+use core\base\models\BaseModel;
 
 class IndexController extends BaseController
 {
     protected function inputData(){
-        $db = Model::instance();
+        $db = BaseModel::instance();
 
-        $query = "SELECT * FROM articles";
-
-        $res = $db->query($query);
-        
         exit('It is an user space');
     }
 
