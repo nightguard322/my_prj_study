@@ -3,13 +3,11 @@
 namespace core\base\exсeptions;
 use \core\base\controller\BaseMethods;
 
-class RouteException extends \Exception
-
+class RouteExсeption extends \Exception
 {
+use BaseMethods;
 
-    protected $messages;
-
-    use BaseMethods;
+protected $messages;
 
     public function __construct($message = '', $code = '0'){
 
