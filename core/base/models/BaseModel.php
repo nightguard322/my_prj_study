@@ -25,7 +25,7 @@ class BaseModel
 
         $result = $this->db->query($query);
 
-        if($this->db->affected_rows === 1){
+        if($this->db->affected_rows === -1){
             throw new DbException('Ошибка в SQL запросе ' . $query . '- ' . $this->db->errno . ' ' . $this->db->error);
 
         }
@@ -37,9 +37,11 @@ class BaseModel
                 if($result->num_rows){
                     $res = [];
                     for($i = 0; $i < $result->num_rows; $i++){
-                        $res = $result->fetch_assoc();
+                        $res[] = $result->fetch_assoc();
+                        
                     }
                 }
+                    print_arr($res);
                     return $res;
 
                     break;

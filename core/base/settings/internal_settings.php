@@ -22,10 +22,8 @@ use core\base\exсeptions\RouteExсeption;
 function autoLoadMainClasses($class_name)
 {
     $class_name = str_replace("\\", '/', $class_name);
-
     if(!@include $class_name . '.php'){
         if(file_exists($_SERVER['DOCUMENT_ROOT'] . PATH . $class_name . '.php')){
-
         new RouteExсeption('Не верное имя файла для подключения - ' . $class_name);
         }
     }

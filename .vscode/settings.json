@@ -7,11 +7,11 @@
             "previewLimit": 50,
             "server": "localhost",
             "port": 3306,
-            "askForPassword": true,
             "driver": "MariaDB",
-            "name": "cms",
+            "name": "Project",
             "database": "cms",
-            "username": "root"
+            "username": "root",
+            "password": ""
         }
     ]
 }

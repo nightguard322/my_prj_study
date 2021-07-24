@@ -118,3 +118,79 @@ use core\base\contoller\Singleton;
     
 
 // }
+
+// Организация работы:
+
+// получение данных в контр-ре
+// формирование для модели в понятном виде
+// модель отправляет в бд и получает ответы
+
+Таблицы:
+
+category-|-id
+         |-name
+         |-content
+
+products-|-id
+         |-name
+         |-content
+         |-parent_id
+
+Запросы:
+$query = "SELECT (имя ячейки) id, name FROM (имя таблицы) products  WHERE (значение)
+ name (равно или в диапазоне) IN (или NOT IN) ('Samsung','iPhone')
+ (или вложенный запрос) IN (SELECT id from category)" ;
+
+Вложенный:
+$query = "SELECT id, name FROM products WHERE parent_id = 
+        (SELECT id FROM category WHERE name='Apple')";
+ 
+ Join:
+$query = "SELECT products.id, products.name FROM products
+LEFT JOIN category on category.id=products.parent_id
+WHERE category.name='Philips'";
+
+Join с продуктами и категориями:
+
+
+teachers-|-id
+         |-name
+         |-content
+
+students-|-id
+         |-name
+         |-content
+
+teachers-students-|-student       
+                  |-teacher 
+                
+
+$query = "SELECT teachers.id, teachers.name students.id, students.name FROM teachers
+        LEFT JOIN students_teachers on teachers.id=students_teachers.teacher
+        LEFT JOIN students on students.id=students_teachers.student
+        ;
+
+    Вместо того, чтобы подавать готовый запрос, он будет формироваться методом
+
+    $table = 'teachers';
+
+    $res = $db->get($table, {
+        
+        -- Массив с настройками
+        'fields' => ['id', 'name'], --затрагиваемые поля
+        'where' => ['id' => 1, 'name' => 'Masha'], --where
+        'operand' => ['<>','='], --Что делать с полями в where
+        'order_direction' => ['ASC', 'DESC'],
+        'limit' => '1'
+
+        });
+
+        Создаем сам метод:
+
+        в BaseModel:
+
+        final public function select($table, $set = [] - массив данных){
+            /**
+            
+            
+             */

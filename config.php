@@ -8,4 +8,4 @@ const PATH = "/project/";
 const HOST = 'localhost';
 const USER = 'root';
 const PASSWORD = '';
-const DB_NAME = 'cms1';
+const DB_NAME = 'cms';

@@ -1,18 +1,48 @@
-
-
-fault:2021-07-16 13:27:45-Не верное имя файла для подключения - core/user/controller/IndexController
-file C:\xampp\htdocs\project\core\base\settings\internal_settings.php
-at line 27
-
-fault:2021-07-16 13:27:45-Class core\user\controller\IndexController does not exist
+fault:2021-07-21 13:54:56-Class core\admin\controller\IndexController does not exist
 file C:\xampp\htdocs\project\core\base\controller\BaseController.php
 at line 56
-
-fault:2021-07-16 13:28:16-Не верное имя файла для подключения - core/user/controller/IndexController
-file C:\xampp\htdocs\project\core\base\settings\internal_settings.php
-at line 27
-
-fault:2021-07-16 13:28:16-Class core\user\controller\IndexController does not exist
+fault:2021-07-21 14:04:44-Class core\admin\controller\IndexController does not exist
 file C:\xampp\htdocs\project\core\base\controller\BaseController.php
 at line 56
-
+fault:2021-07-21 14:07:57-Class core\admin\controller\IndexController does not exist
+file C:\xampp\htdocs\project\core\base\controller\BaseController.php
+at line 56
+fault:2021-07-21 14:08:25-Class core\admin\controller\IndexController does not exist
+file C:\xampp\htdocs\project\core\base\controller\BaseController.php
+at line 56
+fault:2021-07-21 14:08:33-Class core\admin\controller\IndexController does not exist
+file C:\xampp\htdocs\project\core\base\controller\BaseController.php
+at line 56
+fault:2021-07-21 14:08:54-Class core\admin\controller\IndexController does not exist
+file C:\xampp\htdocs\project\core\base\controller\BaseController.php
+at line 56
+fault:2021-07-21 14:09:05-Class core\admin\controller\IndexController does not exist
+file C:\xampp\htdocs\project\core\base\controller\BaseController.php
+at line 56
+fault:2021-07-21 14:09:13-Class core\admin\controller\IndexController does not exist
+file C:\xampp\htdocs\project\core\base\controller\BaseController.php
+at line 56
+fault:2021-07-21 14:10:29-Class core\admin\controller\IndexController does not exist
+file C:\xampp\htdocs\project\core\base\controller\BaseController.php
+at line 56
+fault:2021-07-21 14:10:30-Class core\admin\controller\IndexController does not exist
+file C:\xampp\htdocs\project\core\base\controller\BaseController.php
+at line 56
+fault:2021-07-21 14:10:30-Class core\admin\controller\IndexController does not exist
+file C:\xampp\htdocs\project\core\base\controller\BaseController.php
+at line 56
+fault:2021-07-21 14:10:31-Class core\admin\controller\IndexController does not exist
+file C:\xampp\htdocs\project\core\base\controller\BaseController.php
+at line 56
+fault:2021-07-21 14:10:31-Class core\admin\controller\IndexController does not exist
+file C:\xampp\htdocs\project\core\base\controller\BaseController.php
+at line 56
+fault:2021-07-21 14:10:31-Class core\admin\controller\IndexController does not exist
+file C:\xampp\htdocs\project\core\base\controller\BaseController.php
+at line 56
+fault:2021-07-21 14:10:32-Class core\admin\controller\IndexController does not exist
+file C:\xampp\htdocs\project\core\base\controller\BaseController.php
+at line 56
+fault:2021-07-21 14:10:58-Class core\admin\controller\IndexController does not exist
+file C:\xampp\htdocs\project\core\base\controller\BaseController.php
+at line 56

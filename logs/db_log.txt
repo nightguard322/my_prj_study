@@ -13,3 +13,81 @@ at line 19
 fault:2021-07-18 17:33:06-Не удалость подключиться к базе данных 1049 : Unknown database 'cms1'
 file C:\xampp\htdocs\project\core\base\models\BaseModel.php
 at line 19
+fault:2021-07-21 13:52:51-Не удалость подключиться к базе данных 1049 :    Unknown database 'cms1'
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 19
+fault:2021-07-21 14:10:34-Не удалость подключиться к базе данных 1049 :    Unknown database 'cms1'
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 19
+fault:2021-07-21 14:10:34-Не удалость подключиться к базе данных 1049 :    Unknown database 'cms1'
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 19
+fault:2021-07-21 14:12:22-Не удалость подключиться к базе данных 1049 :    Unknown database 'cms1'
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 19
+fault:2021-07-21 14:12:33-Не удалость подключиться к базе данных 1049 :    Unknown database 'cms1'
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 19
+fault:2021-07-22 14:45:56-Ошибка в SQL запросе SELECT id, name FROM products WHERE parent_id = 
+        (SELECT id FROM category WHERE name'Apple')- 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''Apple')' at line 2
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 29
+fault:2021-07-22 14:45:56-Ошибка в SQL запросе SELECT * FROM articles- 1146 Table 'cms.articles' doesn't exist
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 29
+fault:2021-07-22 14:45:57-Ошибка в SQL запросе SELECT * FROM articles- 1146 Table 'cms.articles' doesn't exist
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 29
+fault:2021-07-22 14:46:16-Ошибка в SQL запросе SELECT id, name FROM products WHERE parent_id = 
+        (SELECT id FROM category WHERE name'Apple')- 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''Apple')' at line 2
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 29
+fault:2021-07-22 14:52:13-Ошибка в SQL запросе SELECT id, name FROM products 
+        LEFT JOIN category on product.parent_id = category.id
+        WHERE category.id = 1
+        - 1052 Column 'id' in field list is ambiguous
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 29
+fault:2021-07-22 14:52:16-Ошибка в SQL запросе SELECT id, name FROM products 
+        LEFT JOIN category on product.parent_id = category.id
+        WHERE category.id = 1
+        - 1052 Column 'id' in field list is ambiguous
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 29
+fault:2021-07-22 14:52:17-Ошибка в SQL запросе SELECT id, name FROM products 
+        LEFT JOIN category on product.parent_id = category.id
+        WHERE category.id = 1
+        - 1052 Column 'id' in field list is ambiguous
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 29
+fault:2021-07-22 14:52:18-Ошибка в SQL запросе SELECT id, name FROM products 
+        LEFT JOIN category on product.parent_id = category.id
+        WHERE category.id = 1
+        - 1052 Column 'id' in field list is ambiguous
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 29
+fault:2021-07-22 14:52:42-Ошибка в SQL запросе SELECT product.id, name FROM products 
+        LEFT JOIN category on product.parent_id = category.id
+        WHERE category.id = 1
+        - 1054 Unknown column 'product.id' in 'field list'
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 29
+fault:2021-07-22 14:53:01-Ошибка в SQL запросе SELECT products.id, name FROM products 
+        LEFT JOIN category on product.parent_id = category.id
+        WHERE category.id = 1
+        - 1052 Column 'name' in field list is ambiguous
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 29
+fault:2021-07-22 14:53:07-Ошибка в SQL запросе SELECT products.id, products.name FROM products 
+        LEFT JOIN category on product.parent_id = category.id
+        WHERE category.id = 1
+        - 1054 Unknown column 'product.parent_id' in 'on clause'
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 29
+fault:2021-07-22 15:28:06-Ошибка в SQL запросе SELECT teachers.id, teachers.name students.id, students.name FROM teachers
+        LEFT JOIN students_teachers on teachers.id=students_teachers.teacher
+        LEFT JOIN students on students.id=students_teachers.student
+        - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '.id, students.name FROM teachers
+        LEFT JOIN students_teachers on teacher' at line 1
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 29
