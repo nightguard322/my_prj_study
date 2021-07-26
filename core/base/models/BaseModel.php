@@ -41,7 +41,6 @@ class BaseModel
                         
                     }
                 }
-                    print_arr($res);
                     return $res;
 
                     break;
@@ -61,4 +60,32 @@ class BaseModel
                     break;
         }
     }
+
+
+final public function sQuery($table, $set = []){
+
+    $fields = $this->createFields($table, $set);
+    $where = $this->createWhere($table, $set);
+    $joinArr = $this->createJoin($table, $set);
+
+    $fields .= $joinArr['fields'];
+    $where .= $joinArr['where'];
+    $join = $joinArr['join'];
+
+    $fields = rtrim($fields, ',');
+    $order = $this->createOrder($table, $set);
+    $limit = $set['limit'] ? $set['limit'] : '';
+
+    $query = "SELECT $fields FROM $table $join $where $order $limit";
+
+    return $this->query($query);
 }
+
+
+
+
+
+
+}
+
+    
