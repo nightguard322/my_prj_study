@@ -81,9 +81,13 @@ final public function sQuery($table, $set = []){
     return $this->query($query);
 }
 
+protected function createFields($table = false, $set){
 
+    $set['fields'] = (is_array($set['fields']) && !empty($set['fields'])) ? $set['fields'] : '';
+    $table = $table ? $table . '.' : '';
 
-
+    
+}
 
 
 }
