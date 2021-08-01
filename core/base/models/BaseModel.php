@@ -65,6 +65,7 @@ class BaseModel
 final public function sQuery($table, $set = []){
 
     $fields = $this->createFields($table, $set);
+    $order = $this->createOrder($table, $set);
     $where = $this->createWhere($table, $set);
     $joinArr = $this->createJoin($table, $set);
 
@@ -73,23 +74,56 @@ final public function sQuery($table, $set = []){
     $join = $joinArr['join'];
 
     $fields = rtrim($fields, ',');
-    $order = $this->createOrder($table, $set);
+
     $limit = $set['limit'] ? $set['limit'] : '';
 
     $query = "SELECT $fields FROM $table $join $where $order $limit";
+    print_arr($query);
 
     return $this->query($query);
 }
 
 protected function createFields($table = false, $set){
 
-    $set['fields'] = (is_array($set['fields']) && !empty($set['fields'])) ? $set['fields'] : '';
+    $set['fields'] = (is_array($set['fields']) && !empty($set['fields'])) ? $set['fields'] : ['*'];
     $table = $table ? $table . '.' : '';
+    $fields = '';
+
+    foreach($set['fields'] as $field){
+        $fields .= $table . $field . ',';
+    }
+    return $fields;
 
     
 }
 
+protected function createOrder($table = false, $set){
 
+    $table = $table ? $table . '.' : '';
+    $order_by = '';
+
+    if(is_array($set['order']) && !empty($set['order'])){
+
+        $set['order_direction'] = (is_array($set['order_direction']) && !empty($set['order_direction']))
+        ? $set['order_direction'] : ['ASK'];
+        
+        $order_by = 'ORDER BY ';
+        $direct_count = 0;
+
+        foreach($set['order'] as $order){
+            if($set['order_direction'][$direct_count]){
+                $order_direction = strtoupper($set['order_direction'][$direct_count]);
+                $direct_count++;
+            }else{
+                $order_direction = $set['order_direction'][$direct_count - 1];
+            }
+            $order_by .= $table . $order . ' ' . $order_direction . ',';
+        }
+        $order_by = rtrim($order_by, ',');
+    }
+
+    return $order_by;
+}
 }
 
     

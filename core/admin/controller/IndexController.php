@@ -10,13 +10,14 @@ class IndexController extends BaseController
     protected function inputData(){
         $db = Model::instance();
 
-        $query = "SELECT teachers.id, teachers.name, students.id as st_id, students.name as st_name
-        FROM teachers
-        LEFT JOIN students_teachers on teachers.id=students_teachers.teacher
-        LEFT JOIN students on students.id=students_teachers.student
-        ";
-
-        $res = $db->query($query);
+        $res = $db->sQuery('teachers', [
+            'fields' => 
+                ['id', 'name'],
+            'order' => 
+                ['name', 'content'],
+            'order_direction' => 
+                ['DESK', 'ASK']
+        ]);
         
         exit('It is an admin space');
     }

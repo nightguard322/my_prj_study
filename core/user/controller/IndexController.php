@@ -10,7 +10,7 @@ class IndexController extends BaseController
     protected function inputData(){
         $db = Model::instance();
 
-        $query = "SELECT * FROM articles";
+        
 
         $res = $db->query($query);
         

@@ -14,24 +14,6 @@ if(!$this->routes) throw new RouteExсeption('Отсутствуют маршр�
         exit($e->getMessage());
     }
 
-<<<<<<< HEAD
-    Далее пишем класс RouteExсeption
-
-    namespace core\base\exсeptions;
-
-class RouteExсeption extends \Exception
-
-{
-
-    protected $messages;
-
-    use BaseMethods;
-
-    public function __construct($message = '', $code = ''){ -- 
-
-        parent::__construct($message = '', $code = ''); --вызов родительского класса
-    }
-=======
     Далее работаем с классом RouteException
 
     namespace core\base\exсeptions;
@@ -61,5 +43,4 @@ class RouteExсeption extends \Exception
         }
     }
     
->>>>>>> 11bc3b3f0a935bb49e9192aa38c99ac552376c35
 }
