@@ -21,7 +21,7 @@ class ShopSettings
             'dir' => false,
             'routes' => 
             [
-                'phones' => 'catalog/pullCat/pushCat'
+                'phone' => 'catalog/pullCat/pushCat'
             ]
         ],
         'p' => ['4','5','6']

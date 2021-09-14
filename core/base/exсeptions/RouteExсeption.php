@@ -5,9 +5,9 @@ use \core\base\controller\BaseMethods;
 
 class RouteExсeption extends \Exception
 {
-use BaseMethods;
+    use BaseMethods;
 
-protected $messages;
+    protected $messages;
 
     public function __construct($message = '', $code = '0'){
 

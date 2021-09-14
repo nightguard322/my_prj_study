@@ -17,7 +17,8 @@ class Settings
             'dir' => '',
             'routes' =>  
             [    
-                'products' => 'items/getGoods/sale'
+                'products' => 'items/getGoods/sale',
+                'phone' => 'catalog/input/output'
             ]    
         ],
 

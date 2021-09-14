@@ -1,25 +1,25 @@
 <?php
 
-в input data у нас будут запросы в mysql, которые будут создаваться автоматически методами, 
-котоые опишем дальше
+// в input data у нас будут запросы в mysql, которые будут создаваться автоматически методами, 
+// котоые опишем дальше
 
 
-Создаем бд в phpmyadmin "cms" и в ней таблицу articles -> int, unsigned(значения от 0 до 255, вместо -127 до 127), индекс primary и AI (прибавка)
-name -> varchar, длина 255, content -> text, null, price -> float numfmt_get_locale
+// Создаем бд в phpmyadmin "cms" и в ней таблицу articles -> int, unsigned(значения от 0 до 255, вместо -127 до 127), индекс primary и AI (прибавка)
+// name -> varchar, длина 255, content -> text, null, price -> float numfmt_get_locale
 
 
 
 
-Создаем класс обработчик исключений от бд (пока полная копия RE)
+// Создаем класс обработчик исключений от бд (пока полная копия RE)
 
-В index добавим обработчик исключений
-catch(DbExсeption $e){
-    exit($e->getMessage());
-}
+// В index добавим обработчик исключений
+// catch(DbExсeption $e){
+//     exit($e->getMessage());
+// }
 
-и в DbException в методе $this->writeLog($error, подпишем 'db_log.txt');
+// и в DbException в методе $this->writeLog($error, подпишем 'db_log.txt');
 
-Базовый класс модели, который будут наследовать польз и админский модели
+// Базовый класс модели, который будут наследовать польз и админский модели
 
 namespace core\base\model;
 
@@ -49,13 +49,13 @@ use core\base\contoller\Singleton;
     }
 }
 
-Далее проверим его в IndexController:
+// Далее проверим его в IndexController:
 
     protected function InputData(){
         $db = BaseModel::instance();
     }
 
- Далее создаем метод query, который будет являться оснновным для и других вспомогательных методов
+//  Далее создаем метод query, который будет являться оснновным для и других вспомогательных методов
 
  final (теперь его нельзя переопределять) public function query($query - переменная с запроса 
  , $метод, что делать - $crud(create,read,udpate,delete) = 'r', $return_id = false - для метода вставки - 
@@ -174,7 +174,7 @@ $query = "SELECT teachers.id, teachers.name students.id, students.name FROM teac
 
     $table = 'teachers';
 
-    $res = $db->get($table, {
+    $res = $db->sQuery($table, {
         
         -- Массив с настройками
         'fields' => ['id', 'name'], --затрагиваемые поля

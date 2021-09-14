@@ -21,6 +21,7 @@ class BaseModel
         $this->db->query("SET NAMES UTF8");
         
     }
+            
     final public function query($query, $crud = 'r', $return_id = false){
 
         $result = $this->db->query($query);
@@ -61,69 +62,151 @@ class BaseModel
         }
     }
 
+    final public function sQuery($table, $set = []){
 
-final public function sQuery($table, $set = []){
+        $fields = $this->createFields($table, $set);
+        $order = $this->createOrder($table, $set);
+        $where = $this->createWhere($table, $set);
+        $joinArr = $this->createJoin($table, $set);
 
-    $fields = $this->createFields($table, $set);
-    $order = $this->createOrder($table, $set);
-    $where = $this->createWhere($table, $set);
-    $joinArr = $this->createJoin($table, $set);
+        $fields .= $joinArr['fields'];
+        $where .= $joinArr['where'];
+        $join = $joinArr['join'];
 
-    $fields .= $joinArr['fields'];
-    $where .= $joinArr['where'];
-    $join = $joinArr['join'];
+        $fields = rtrim($fields, ',');
 
-    $fields = rtrim($fields, ',');
+        $limit = $set['limit'] ? $set['limit'] : '';
 
-    $limit = $set['limit'] ? $set['limit'] : '';
+        $query = "SELECT $fields FROM $table $join $where $order $limit";
+        print_arr($query);
 
-    $query = "SELECT $fields FROM $table $join $where $order $limit";
-    print_arr($query);
-
-    return $this->query($query);
-}
-
-protected function createFields($table = false, $set){
-
-    $set['fields'] = (is_array($set['fields']) && !empty($set['fields'])) ? $set['fields'] : ['*'];
-    $table = $table ? $table . '.' : '';
-    $fields = '';
-
-    foreach($set['fields'] as $field){
-        $fields .= $table . $field . ',';
+        return $this->query($query);
     }
-    return $fields;
 
-    
-}
+    protected function createFields($table = false, $set){
 
-protected function createOrder($table = false, $set){
+        $set['fields'] = (is_array($set['fields']) && !empty($set['fields'])) ? $set['fields'] : ['*'];
+        $table = $table ? $table . '.' : '';
+        $fields = '';
 
-    $table = $table ? $table . '.' : '';
-    $order_by = '';
-
-    if(is_array($set['order']) && !empty($set['order'])){
-
-        $set['order_direction'] = (is_array($set['order_direction']) && !empty($set['order_direction']))
-        ? $set['order_direction'] : ['ASK'];
-        
-        $order_by = 'ORDER BY ';
-        $direct_count = 0;
-
-        foreach($set['order'] as $order){
-            if($set['order_direction'][$direct_count]){
-                $order_direction = strtoupper($set['order_direction'][$direct_count]);
-                $direct_count++;
-            }else{
-                $order_direction = $set['order_direction'][$direct_count - 1];
-            }
-            $order_by .= $table . $order . ' ' . $order_direction . ',';
+        foreach($set['fields'] as $field){
+            $fields .= $table . $field . ',';
         }
-        $order_by = rtrim($order_by, ',');
+        return $fields;
+
+        
     }
 
-    return $order_by;
-}
+    protected function createOrder($table = false, $set){
+
+        $table = $table ? $table . '.' : '';
+        $order_by = '';
+
+        if(is_array($set['order']) && !empty($set['order'])){
+
+            $set['order_direction'] = (is_array($set['order_direction']) && !empty($set['order_direction']))
+            ? $set['order_direction'] : ['ASK'];
+            
+            $order_by = 'ORDER BY ';
+            $direct_count = 0;
+
+            foreach($set['order'] as $order){
+                if($set['order_direction'][$direct_count]){
+                    $order_direction = strtoupper($set['order_direction'][$direct_count]);
+                    $direct_count++;
+                }else{
+                    $order_direction = $set['order_direction'][$direct_count - 1];
+                }
+                $order_by .= $table . $order . ' ' . $order_direction . ',';
+            }
+            $order_by = rtrim($order_by, ',');
+        }
+
+        return $order_by;
+    }
+
+    protected function createWhere($table = false, $set, $instruction = "WHERE"){
+
+        $table = $table ? $table . '.' : '';
+
+        $where = '';
+
+        if(is_array($set['where']) && !empty($set['where'])){
+
+            $operand = (is_array($set['operand']) && !empty($set['operand'])) ? $set['operand'] : ['='];
+            $condition = (is_array($set['condition']) && !empty($set['condition'])) ? $set['condition'] : ['AND'];
+            
+            $where .= $instruction . ' ';
+
+            $o_count = 0;
+            $c_count = 0;
+
+            foreach($set['where'] as $key => $item){
+               
+                if($set['operand'][$o_count]){
+
+                    $operand = $set['operand'][$o_count];
+                    $o_count++;
+                    
+                }else{
+                    $operand = $set['operand'][$o_count - 1];
+                }
+
+                if($set['condition'][$c_count]){
+                   
+                    $condition = $set['condition'][$c_count];
+                    $c_count++;
+                }else{
+                    $condition = $set['condition'][$c_count - 1];
+                }
+
+                echo $operand . '<br>';
+                if($operand === "IN" || $operand === "NOT IN"){
+                    echo "мы тут Select, подан не массив";
+                    if(is_string($item) && strpos('SELECT', $item)){
+                        $in_str = $item;
+                    }else{
+                        if(is_array($item)){
+                            $arr_items = $item;
+                            echo "мы тут, не Select, подан массив";
+                        }else{
+                            $arr_items = explode(',', $item);
+                        }
+                        $in_str = '';
+
+                        foreach($arr_items as $arr_item){
+                            $in_str .= "'" . trim($arr_item) . "',";
+                        }
+                }
+                $where .= $table . $key . ' ' . $operand . " (" . trim($in_str, ',') . ") " . $condition;
+
+                exit();
+
+                }elseif(strpos($operand, 'LIKE') !== false){
+                    echo "WHERE = " . $where;
+                    $lt_arr = explode('%', $operand);
+
+                    foreach($lt_arr as $lt_key => $lt){
+                        if(!$lt){
+                            if(!$lt_key){
+                                $item = '%' . $item;
+                            }else{
+                                $item += '%';
+                            }
+                        }
+                    }
+
+                $where .= $table . $key . ' LIKE ' . "'" . $item . "' " . $condition;
+                    
+                    exit();
+                }
+
+            }    
+        }
+
+
+    }
+
 }
 
     

@@ -91,3 +91,65 @@ fault:2021-07-22 15:28:06-Ошибка в SQL запросе SELECT teachers.id,
         LEFT JOIN students_teachers on teacher' at line 1
 file C:\xampp\htdocs\project\core\base\models\BaseModel.php
 at line 29
+fault:2021-08-18 14:05:13-Не удалость подключиться к базе данных 1130 :    Host 'localhost' is not allowed to connect to this MariaDB server
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 19
+fault:2021-08-20 10:33:10-Не удалость подключиться к базе данных 2006 :    MySQL server has gone away
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 19
+fault:2021-08-20 10:33:14-Не удалость подключиться к базе данных 2002 :    ����������� �� �����������, �.�. �������� ��������� ������ ������ �� �����������.
+
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 19
+fault:2021-08-20 10:33:52-Не удалость подключиться к базе данных 2002 :    ����������� �� �����������, �.�. �������� ��������� ������ ������ �� �����������.
+
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 19
+fault:2021-08-20 11:30:52-Не удалость подключиться к базе данных 1049 :    Unknown database 'cms'
+file C:\www\htdocs\project\core\base\models\BaseModel.php
+at line 19
+fault:2021-08-24 13:10:08-Не удалость подключиться к базе данных 1049 :    Unknown database 'cms'
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 19
+fault:2021-08-24 13:10:38-Не удалость подключиться к базе данных 1049 :    Unknown database 'cms'
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 19
+fault:2021-08-24 13:11:23-Не удалость подключиться к базе данных 1049 :    Unknown database 'cms'
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 19
+fault:2021-08-24 13:24:04-Не удалость подключиться к базе данных 1049 :    Unknown database 'cms'
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 19
+fault:2021-08-24 13:24:11-Не удалость подключиться к базе данных 1049 :    Unknown database 'cms'
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 19
+fault:2021-08-24 13:24:12-Не удалость подключиться к базе данных 1049 :    Unknown database 'cms'
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 19
+fault:2021-08-24 13:24:13-Не удалость подключиться к базе данных 1049 :    Unknown database 'cms'
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 19
+fault:2021-08-24 13:25:38-Не удалость подключиться к базе данных 1049 :    Unknown database 'cms'
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 19
+fault:2021-08-24 13:25:44-Не удалость подключиться к базе данных 1049 :    Unknown database 'cms'
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 19
+fault:2021-08-24 13:25:47-Не удалость подключиться к базе данных 1049 :    Unknown database 'cms'
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 19
+fault:2021-08-24 13:25:48-Не удалость подключиться к базе данных 1049 :    Unknown database 'cms'
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 19
+fault:2021-08-24 13:25:48-Не удалость подключиться к базе данных 1049 :    Unknown database 'cms'
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 19
+fault:2021-08-24 13:28:59-Не удалость подключиться к базе данных 1049 :    Unknown database 'cms'
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 19
+fault:2021-08-24 13:29:02-Не удалость подключиться к базе данных 1049 :    Unknown database 'cms'
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 19
+fault:2021-09-01 10:06:58-Не верный путь к шаблону - core/admin/view/catalog
+file C:\xampp\htdocs\project\core\base\controller\BaseController.php
+at line 111

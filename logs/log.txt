@@ -46,3 +46,63 @@ at line 56
 fault:2021-07-21 14:10:58-Class core\admin\controller\IndexController does not exist
 file C:\xampp\htdocs\project\core\base\controller\BaseController.php
 at line 56
+fault:2021-08-24 13:11:45-Class core\plugins\shop\IndexController does not exist
+file C:\xampp\htdocs\project\core\base\controller\BaseController.php
+at line 56
+fault:2021-08-24 13:25:53-Class core\plugins\shop\IndexController does not exist
+file C:\xampp\htdocs\project\core\base\controller\BaseController.php
+at line 56
+fault:2021-08-24 13:28:34-Class core\plugins\shop\IndexController does not exist
+file C:\xampp\htdocs\project\core\base\controller\BaseController.php
+at line 56
+fault:2021-08-24 13:28:37-Class core\plugins\shop\IndexController does not exist
+file C:\xampp\htdocs\project\core\base\controller\BaseController.php
+at line 56
+fault:2021-08-24 13:33:58-Не верный путь к шаблону - core/admin/view/catalog
+file C:\xampp\htdocs\project\core\base\controller\BaseController.php
+at line 111
+fault:2021-08-24 13:34:51-Не верный путь к шаблону - core/admin/view/catalog
+file C:\xampp\htdocs\project\core\base\controller\BaseController.php
+at line 111
+fault:2021-08-24 13:35:02-Class core\plugins\shop\IndexController does not exist
+file C:\xampp\htdocs\project\core\base\controller\BaseController.php
+at line 56
+fault:2021-08-24 13:36:41-Class core\plugins\shop\IndexController does not exist
+file C:\xampp\htdocs\project\core\base\controller\BaseController.php
+at line 56
+fault:2021-08-24 13:37:27-Class core\plugins\shop\IndexController does not exist
+file C:\xampp\htdocs\project\core\base\controller\BaseController.php
+at line 56
+fault:2021-08-24 13:38:46-Class core\admin\controller\PhoneController does not exist
+file C:\xampp\htdocs\project\core\base\controller\BaseController.php
+at line 56
+fault:2021-08-24 13:41:52-Class core\admin\controller\GoodsController does not exist
+file C:\xampp\htdocs\project\core\base\controller\BaseController.php
+at line 56
+fault:2021-08-24 13:46:20-Class core\admin\controller\CatalogController does not exist
+file C:\xampp\htdocs\project\core\base\controller\BaseController.php
+at line 56
+fault:2021-08-24 13:46:49-Class core\plugins\shop\PhoneController does not exist
+file C:\xampp\htdocs\project\core\base\controller\BaseController.php
+at line 56
+fault:2021-09-01 09:50:58-Не верный путь к шаблону - core/admin/view/catalog
+file C:\xampp\htdocs\project\core\base\controller\BaseController.php
+at line 111
+fault:2021-09-01 10:00:12-Не верный путь к шаблону - core/admin/view/catalog
+file C:\xampp\htdocs\project\core\base\controller\BaseController.php
+at line 111
+fault:2021-09-08 15:29:17-Class core\user\controller\PhpinfoController does not exist
+file C:\xampp\htdocs\project\core\base\controller\BaseController.php
+at line 56
+fault:2021-09-08 15:35:49-Class core\user\controller\Phpinfo.phpController does not exist
+file C:\xampp\htdocs\project\core\base\controller\BaseController.php
+at line 56
+fault:2021-09-14 14:15:34-Class core\plugins\shop\IndexController does not exist
+file C:\xampp\htdocs\project\core\base\controller\BaseController.php
+at line 56
+fault:2021-09-14 14:15:44-Class core\plugins\shop\IndexController does not exist
+file C:\xampp\htdocs\project\core\base\controller\BaseController.php
+at line 56
+fault:2021-09-14 14:15:46-Class core\plugins\shop\IndexController does not exist
+file C:\xampp\htdocs\project\core\base\controller\BaseController.php
+at line 56

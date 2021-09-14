@@ -17,7 +17,7 @@ use core\base\exсeptions\DbException;
 
 try{
     RouteController::instance()->route();
-    
+    exit();
 }
 catch(RouteExсeption $e){
     exit($e->getMessage());

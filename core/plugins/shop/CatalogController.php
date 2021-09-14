@@ -6,7 +6,7 @@ use core\base\controller\BaseController;
 
 class CatalogController extends BaseController
 {
-    protected function inputData(){
+    protected function pullCat(){
         $name = 'VVV';
         $content = $this->render('', compact('name'));
         

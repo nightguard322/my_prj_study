@@ -21,7 +21,6 @@ class RouteController extends BaseController
 
         if(!empty($arr[0])){
            
-
             if($this->routes[$var]['routes'][$arr[0]]){
 
                 $route = explode("/", $this->routes[$var]['routes'][$arr[0]]);
@@ -88,20 +87,19 @@ class RouteController extends BaseController
                         $route = "plugins";
                     }
 
-                    
                 }else{
                     echo '   .:мы в админке:.';
                     $this->controller = $this->routes['admin']['path'];
 
                     $hrUrl = $this->routes['admin']['hrUrl'];
 
-                    $route = "admin";   
+                    $route = "admin";  
+                    echo 'url - '; print_arr($url); 
 
                 }
 
             }else{
                 echo '   .:мы в юзерской части:.';
-                $url = explode('/', substr($adress_str, strlen(PATH)));
 
                 $hrUrl = $this->routes['user']['hrUrl'];
                 
@@ -114,7 +112,8 @@ class RouteController extends BaseController
             $this->createRoute($route, $url);
 
         //Если до начала значения ключа alias в массиве admin в строке $address_str кол-во символов = длине PATH
-            if($url[1]){
+
+            if($url[1]){ //после контроллера [0] могут идти параметры с алиасом (или без него)
                 $count = count($url);
                 $key = '';
                 
