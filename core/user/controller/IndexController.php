@@ -14,8 +14,11 @@ class IndexController extends BaseController
         $res = $db->sQuery('students',
         [
             'fields' => ['id', 'name'],
-            'where' => ['id' => 1, 'name' => 'Masha'],
-            'operand' => ['IN','LIKE', '='],
+            'where' => [
+                'id' => '1, 2, 3',
+                'name' => 'Masha'
+            ],
+            'operand' => ['IN','%LIKE%'],
             'condition' => ['AND'],
             'order' => ['id', 'name'],
             'order_direction' => ['ASC', 'DESK'],

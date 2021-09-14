@@ -136,13 +136,14 @@ class BaseModel
             $operand = (is_array($set['operand']) && !empty($set['operand'])) ? $set['operand'] : ['='];
             $condition = (is_array($set['condition']) && !empty($set['condition'])) ? $set['condition'] : ['AND'];
             
-            $where .= $instruction . ' ';
+            $where .= $instruction;
 
             $o_count = 0;
             $c_count = 0;
 
             foreach($set['where'] as $key => $item){
                
+                $where .= ' ';
                 if($set['operand'][$o_count]){
 
                     $operand = $set['operand'][$o_count];
@@ -160,16 +161,16 @@ class BaseModel
                     $condition = $set['condition'][$c_count - 1];
                 }
 
-                echo $operand . '<br>';
                 if($operand === "IN" || $operand === "NOT IN"){
-                    echo "мы тут Select, подан не массив";
                     if(is_string($item) && strpos('SELECT', $item)){
                         $in_str = $item;
+                    
                     }else{
                         if(is_array($item)){
+
                             $arr_items = $item;
-                            echo "мы тут, не Select, подан массив";
                         }else{
+
                             $arr_items = explode(',', $item);
                         }
                         $in_str = '';
@@ -180,8 +181,6 @@ class BaseModel
                 }
                 $where .= $table . $key . ' ' . $operand . " (" . trim($in_str, ',') . ") " . $condition;
 
-                exit();
-
                 }elseif(strpos($operand, 'LIKE') !== false){
                     echo "WHERE = " . $where;
                     $lt_arr = explode('%', $operand);
@@ -191,19 +190,26 @@ class BaseModel
                             if(!$lt_key){
                                 $item = '%' . $item;
                             }else{
-                                $item += '%';
+                                $item .= '%';
                             }
                         }
                     }
 
                 $where .= $table . $key . ' LIKE ' . "'" . $item . "' " . $condition;
                     
-                    exit();
+                }else{
+                    if(strpos($item, 'SELECT') === 0){
+                        $where .= $table . $key . $operand . '(' . $item . ')' . $condition;
+                     }else{
+                        $where .= $table . $key . $operand . "'" . $item . "'" . $condition;
+                     }
+                    
                 }
 
-            }    
+            }  
+            $where = substr($where, 0, strrpos($where, $condition));  
         }
-
+        return $where;
 
     }
 

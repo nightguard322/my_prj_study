@@ -93,7 +93,21 @@ Class project_l19 //<--не обращать внимания, тут класс
                 }
             }
 
+ 
+        }else{ //тут ищем сразу идущий вложенный запрос (SELECT tb.name WHERE id=(SELECT...))
+            if(strpos($item, 'SELECT') === 0){ //Если SELECT на первом месте - это влож запрос
+                $where .= $table . $key . $operand . '(' . $item . ')' . $condition; 
+                //добавляем вложенный запрос в скобках
+            }else{
+                $where .= $table . $key . $operand . "'" . $item . "'" . $condition;
+                //самый простой запрос, не подходящий под условия выше (IN, NOT IN, LIKE, SELECT)
+            }
+    
+    }
+        $where = substr($where, 0, strrpos($where, $condition));
+        //вырезаем подстроку с самой where с нулевого элемента по начало $condition
+    } 
+    return $where;
 
-        }
-       }
-} 
+}
+}
