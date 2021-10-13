@@ -11,25 +11,53 @@ class IndexController extends BaseController
         $db = Model::instance();
         echo 'юзерский дефолт контроллер <br>';
 
-        $res = $db->sQuery('students',
-        [
-            'fields' => ['id', 'name'],
-            'where' => [
-                'id' => '1, 2, 3',
-                'name' => 'Masha'
-            ],
-            'operand' => ['IN','%LIKE%'],
-            'condition' => ['AND'],
-            'order' => ['id', 'name'],
-            'order_direction' => ['ASC', 'DESK'],
-            'limit' => '1'
-        ]
+        $table = 'students';
+        $files = ['main_photo' => '111.jpg'];
+        $files['second_photo'] = '222.jpg';
+        // $res = $db->sQuery(
+        // [
+        //     'fields' => ['id', 'name'],
+        //     'where' => [
+        //         'name' => "O'henry",
+        //         'surname' => 'SELECT id FROM teachers WHERE id=1'
+        //     ],
+        //     'operand' => ['=','NOT IN'],
+        //     'condition' => ['AND'],
+        //     'order' => ['id', 'name'],
+        //     'order_direction' => ['ASC', 'DESC'],
+        //     'limit' => '1',
+        //     'join' => [
+        //         [
+        //             'table' => 'join_table1', //название таблицы
+        //             'fields' =>  ['id as j_id', 'name as j_name'], //тут алиасы полей новой таблицы, чтобы не 
+        //             //спутались с такими же полями предыдущей таблицы
+        //             'type' => 'left',  //тип слияния (LEFT JOIN, INNER JOIN, RIGHT JOIN)
+        //             'where' => ['name' => 'sasha', ], //эта where будет дополнять первую where в параметрах сверху
+        //             'operand' => ['='], //Что делать с полями в where
+        //             'condition' => ['OR'], //WHERE id = 1 AND (or) name = 'Vasja'
+        //             'on' => [   //признак присоединения
+        //                 'table' => 'teachers', //по умолчанию стыковка к предыдущей таблице, но можно указать явно к какой присоединять
+        //                 'fields' => ['id', 'id']  //кол-во полей, который должно быть ровно 2 (по ним идет стыковка 2х таблиц и 
+        //                 //это почти всегда id - инткрементные идентификаторы)
+        //             ]
+        //         ],
+        //         [
+        //             'table' => 'join_table2', //к какой таблице присоединять
+        //             'fields' =>  ['id as j_id', 'name as j_name'], //тут алиасы полей новой таблицы, чтобы не 
+        //             //спутались с такими же полями предыдущей таблицы
+        //             'type' => 'left',  //тип слияния (LEFT JOIN, INNER JOIN, RIGHT JOIN)
+        //             'where' => ['name' => 'sasha', ], //эта where будет дополнять первую where в параметрах сверху
+        //             'operand' => ['='], //Что делать с полями в where
+        //             'condition' => ['AND'], //WHERE id = 1 AND (or) name = 'Vasja'
+        //             'on' => ['id', 'id']  //кол-во полей, который должно быть ровно 2 (по ним идет стыковка 2х таблиц и 
+        //                 //можно явно не писать название таблицы и что это поля, метод и сам это определит
+        //             ]
+        //         ] 
+        // ], $table);
 
+        $res = $db->showColumns($table);
 
-            
-        );
-        
-        exit('It is an user space');
+        exit('id: ' . $res['id'] . ', name =' . $res['name'] );
     }
 
     // protected function outputData(){

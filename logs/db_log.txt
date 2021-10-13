@@ -153,3 +153,135 @@ at line 19
 fault:2021-09-01 10:06:58-Не верный путь к шаблону - core/admin/view/catalog
 file C:\xampp\htdocs\project\core\base\controller\BaseController.php
 at line 111
+fault:2021-09-27 07:53:23-Ошибка в SQL запросе SELECT students.id,students.name FROM students  WHERE students.id IN ('1','2','3') AND students.name LIKE '%Masha%'  ORDER BY students.id ASC,students.name DESK 1- 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'DESK 1' at line 1
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 30
+fault:2021-09-27 08:25:57-Ошибка в SQL запросе SELECT students.id,students.name FROM students  WHERE students.id IN ('1','2','3') AND students.name LIKE '%Masha%'  ORDER BY students.id ASC,students.name DESK 1- 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'DESK 1' at line 1
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 30
+fault:2021-09-27 10:01:04-Ошибка в SQL запросе SELECT  FROM Array    s- 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM Array    s' at line 1
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 30
+fault:2021-09-27 10:04:40-Ошибка в SQL запросе SELECT  FROM Array    s- 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM Array    s' at line 1
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 30
+fault:2021-09-27 10:04:43-Ошибка в SQL запросе SELECT  FROM Array    s- 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM Array    s' at line 1
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 30
+fault:2021-09-27 10:04:48-Ошибка в SQL запросе SELECT  FROM Array    s- 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM Array    s' at line 1
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 30
+fault:2021-09-27 10:05:24-Ошибка в SQL запросе SELECT  FROM Array    s- 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM Array    s' at line 1
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 30
+fault:2021-09-27 10:06:12-Ошибка в SQL запросе SELECT students.id,students.name FROM students  WHERE students.id IN ('1','2','3') AND students.name LIKE '%Masha%'  ORDER BY students.id ASC,students.name DESK 1- 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'DESK 1' at line 1
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 30
+fault:2021-09-27 10:07:17-Ошибка в SQL запросе SELECT students.id,students.name FROM students  WHERE students.id IN ('1','2','3') AND students.name LIKE '%Masha%'  ORDER BY students.id ASC,students.name DESK 1- 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'DESK 1' at line 1
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 30
+fault:2021-09-27 10:12:03-Ошибка в SQL запросе SELECT students.id,students.name FROM students  WHERE students.id IN ('1','2','3') AND students.name LIKE '%Masha%'  ORDER BY students.id ASC,students.name DESK 1- 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'DESK 1' at line 1
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 30
+fault:2021-09-27 10:12:10-Ошибка в SQL запросе SELECT students.id,students.name FROM students  WHERE students.id IN ('1','2','3') AND students.name LIKE '%Masha%'  ORDER BY students.id ASC,students.name DESK 1- 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'DESK 1' at line 1
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 30
+fault:2021-09-27 10:12:14-Ошибка в SQL запросе SELECT students.id,students.name FROM students  WHERE students.id IN ('1','2','3') AND students.name LIKE '%Masha%'  ORDER BY students.id ASC,students.name DESK 1- 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'DESK 1' at line 1
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 30
+fault:2021-09-27 10:13:20-Ошибка в SQL запросе SELECT students.id,students.name FROM students  WHERE students.id IN ('1','2','3') AND students.name LIKE '%Masha%'  ORDER BY students.id ASC,students.name DESK 1- 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'DESK 1' at line 1
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 30
+fault:2021-09-27 10:13:54-Ошибка в SQL запросе SELECT students.id,students.name FROM students LEFTJOIN join_table1 ONteachers.id=join_table1parent_id LEFTJOIN join_table1 ONjoin_table1.id=join_table1parent_id WHERE students.id IN ('1','2','3') AND students.name LIKE '%Masha%' AND join_table1.name='sasha'AND join_table1.name='sasha' ORDER BY students.id ASC,students.name DESK 1- 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'join_table1 ONteachers.id=join_table1parent_id LEFTJOIN join_table1 ONjoin_ta...' at line 1
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 30
+fault:2021-09-27 10:14:13-Ошибка в SQL запросе SELECT students.id,students.name FROM students  LEFTJOIN join_table1 ONteachers.id=join_table1parent_id  LEFTJOIN join_table1 ONjoin_table1.id=join_table1parent_id WHERE students.id IN ('1','2','3') AND students.name LIKE '%Masha%' AND join_table1.name='sasha'AND join_table1.name='sasha' ORDER BY students.id ASC,students.name DESK 1- 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'join_table1 ONteachers.id=join_table1parent_id  LEFTJOIN join_table1 ONjoin_t...' at line 1
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 30
+fault:2021-09-27 10:14:16-Ошибка в SQL запросе SELECT students.id,students.name FROM students  LEFTJOIN join_table1 ONteachers.id=join_table1parent_id  LEFTJOIN join_table1 ONjoin_table1.id=join_table1parent_id WHERE students.id IN ('1','2','3') AND students.name LIKE '%Masha%' AND join_table1.name='sasha'AND join_table1.name='sasha' ORDER BY students.id ASC,students.name DESK 1- 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'join_table1 ONteachers.id=join_table1parent_id  LEFTJOIN join_table1 ONjoin_t...' at line 1
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 30
+fault:2021-09-27 10:15:17-Ошибка в SQL запросе SELECT students.id,students.name FROM students  LEFTJOIN join_table1 ONteachers.id=join_table1parent_id  LEFTJOIN join_table1 ONjoin_table1.id=join_table1parent_id WHERE students.id IN ('1','2','3') AND students.name LIKE '%Masha%' AND join_table1.name='sasha'AND join_table1.name='sasha' ORDER BY students.id ASC,students.name DESK 1- 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'join_table1 ONteachers.id=join_table1parent_id  LEFTJOIN join_table1 ONjoin_t...' at line 1
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 30
+fault:2021-09-27 10:15:58-Ошибка в SQL запросе SELECT students.id,students.name FROM students LEFT JOIN join_table1 ONteachers.id=join_table1parent_id LEFT JOIN join_table1 ONjoin_table1.id=join_table1parent_id WHERE students.id IN ('1','2','3') AND students.name LIKE '%Masha%' AND join_table1.name='sasha'AND join_table1.name='sasha' ORDER BY students.id ASC,students.name DESK 1- 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '.id=join_table1parent_id LEFT JOIN join_table1 ONjoin_table1.id=join_table1pa...' at line 1
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 30
+fault:2021-09-27 10:17:26-Ошибка в SQL запросе SELECT students.id,students.name FROM students LEFT JOIN join_table1 ON teachers.id=join_table1parent_id LEFT JOIN join_table1 ON join_table1.id=join_table1parent_id WHERE students.id IN ('1','2','3') AND students.name LIKE '%Masha%' AND join_table1.name='sasha'AND join_table1.name='sasha' ORDER BY students.id ASC,students.name DESK 1- 1066 Not unique table/alias: 'join_table1'
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 30
+fault:2021-09-27 10:18:01-Ошибка в SQL запросе SELECT students.id,students.name FROM students LEFT JOIN join_table1 ON teachers.id=join_table1.parent_id LEFT JOIN join_table1 ON join_table1.id=join_table1.parent_id WHERE students.id IN ('1','2','3') AND students.name LIKE '%Masha%' AND join_table1.name='sasha'AND join_table1.name='sasha' ORDER BY students.id ASC,students.name DESK 1- 1066 Not unique table/alias: 'join_table1'
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 30
+fault:2021-09-27 10:18:03-Ошибка в SQL запросе SELECT students.id,students.name FROM students LEFT JOIN join_table1 ON teachers.id=join_table1.parent_id LEFT JOIN join_table1 ON join_table1.id=join_table1.parent_id WHERE students.id IN ('1','2','3') AND students.name LIKE '%Masha%' AND join_table1.name='sasha'AND join_table1.name='sasha' ORDER BY students.id ASC,students.name DESK 1- 1066 Not unique table/alias: 'join_table1'
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 30
+fault:2021-09-27 10:19:15-Ошибка в SQL запросе SELECT students.id,students.name,join_table1.id as j_id,join_table1.name as j_name,join_table1.id as j_id,join_table1.name as j_name FROM students LEFT JOIN join_table1 ON teachers.id=join_table1.parent_id LEFT JOIN join_table1 ON join_table1.id=join_table1.parent_id WHERE students.id IN ('1','2','3') AND students.name LIKE '%Masha%' AND join_table1.name='sasha'AND join_table1.name='sasha' ORDER BY students.id ASC,students.name DESK 1- 1066 Not unique table/alias: 'join_table1'
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 30
+fault:2021-09-27 10:22:46-Ошибка в SQL запросе SELECT students.id,students.name,join_table1.id as j_id,join_table1.name as j_name,join_table2.id as j_id,join_table2.name as j_name FROM students LEFT JOIN join_table1 ON teachers.id=join_table1.parent_id LEFT JOIN join_table2 ON join_table1.id=join_table2.parent_id WHERE students.id IN ('1','2','3') AND students.name LIKE '%Masha%' AND join_table1.name='sasha'AND join_table2.name='sasha' ORDER BY students.id ASC,students.name DESK 1- 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'DESK 1' at line 1
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 30
+fault:2021-09-27 10:22:48-Ошибка в SQL запросе SELECT students.id,students.name,join_table1.id as j_id,join_table1.name as j_name,join_table2.id as j_id,join_table2.name as j_name FROM students LEFT JOIN join_table1 ON teachers.id=join_table1.parent_id LEFT JOIN join_table2 ON join_table1.id=join_table2.parent_id WHERE students.id IN ('1','2','3') AND students.name LIKE '%Masha%' AND join_table1.name='sasha'AND join_table2.name='sasha' ORDER BY students.id ASC,students.name DESK 1- 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'DESK 1' at line 1
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 30
+fault:2021-09-27 10:31:49-Ошибка в SQL запросе SELECT students.id,students.name,join_table1.id as j_id,join_table1.name as j_name,join_table2.id as j_id,join_table2.name as j_name FROM students LEFT JOIN join_table1 ON teachers.id=join_table1.parent_id LEFT JOIN join_table2 ON join_table1.id=join_table2.parent_id WHERE students.name IN ('Masha') AND students.surname NOT IN (SELECT id FROM teachers WHERE id=1) AND join_table1.name='sasha'AND join_table2.name='sasha' ORDER BY students.id ASC,students.name DESK 1- 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'DESK 1' at line 1
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 30
+fault:2021-09-27 10:33:35-Ошибка в SQL запросе SELECT students.id,students.name,join_table1.id as j_id,join_table1.name as j_name,join_table2.id as j_id,join_table2.name as j_name FROM students LEFT JOIN join_table1 ON teachers.id=join_table1.parent_id LEFT JOIN join_table2 ON join_table1.id=join_table2.parent_id WHERE students.name='Masha'AND students.surname NOT IN (SELECT id FROM teachers WHERE id=1) AND join_table1.name='sasha'AND join_table2.name='sasha' ORDER BY students.id ASC,students.name DESK 1- 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'DESK 1' at line 1
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 30
+fault:2021-09-27 14:04:58-Ошибка в SQL запросе SELECT students.id,students.name,join_table1.id as j_id,join_table1.name as j_name,join_table2.id as j_id,join_table2.name as j_name FROM students LEFT JOIN join_table1 ON teachers.id=join_table1.parent_id LEFT JOIN join_table2 ON join_table1.id=join_table2.parent_id WHERE 1students.name='Masha'AND 1students.surname NOT IN (SELECT id FROM teachers WHERE id=1) AND 1join_table1.name='sasha'AND 1join_table2.name='sasha' ORDER BY students.id ASC,students.name DESK 1- 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'DESK 1' at line 1
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 30
+fault:2021-09-27 14:04:59-Ошибка в SQL запросе SELECT students.id,students.name,join_table1.id as j_id,join_table1.name as j_name,join_table2.id as j_id,join_table2.name as j_name FROM students LEFT JOIN join_table1 ON teachers.id=join_table1.parent_id LEFT JOIN join_table2 ON join_table1.id=join_table2.parent_id WHERE students.name='Masha'AND students.surname NOT IN (SELECT id FROM teachers WHERE id=1) AND join_table1.name='sasha'AND join_table2.name='sasha' ORDER BY students.id ASC,students.name DESK LIMIT 1- 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'DESK LIMIT 1' at line 1
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 30
+fault:2021-09-27 14:05:20-Ошибка в SQL запросе SELECT students.id,students.name,join_table1.id as j_id,join_table1.name as j_name,join_table2.id as j_id,join_table2.name as j_name FROM students LEFT JOIN join_table1 ON teachers.id=join_table1.parent_id LEFT JOIN join_table2 ON join_table1.id=join_table2.parent_id WHERE students.name='Masha'AND students.surname NOT IN (SELECT id FROM teachers WHERE id=1) AND join_table1.name='sasha'AND join_table2.name='sasha' ORDER BY students.id ASC,students.name DESC LIMIT 1- 1054 Unknown column 'students.surname' in 'IN/ALL/ANY subquery'
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 30
+fault:2021-09-27 14:08:59-Ошибка в SQL запросе SELECT students.id,students.name,join_table1.id as j_id,join_table1.name as j_name,join_table2.id as j_id,join_table2.name as j_name FROM students LEFT JOIN join_table1 ON teachers.id=join_table1.parent_id LEFT JOIN join_table2 ON join_table1.id=join_table2.parent_id WHERE students.name='Masha'AND students.surname NOT IN (SELECT id FROM teachers WHERE id=1) AND join_table1.name='sasha'AND join_table2.name='sasha' ORDER BY students.id ASC,students.name DESC LIMIT 1- 1054 Unknown column 'teachers.id' in 'on clause'
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 30
+fault:2021-09-27 14:10:10-Ошибка в SQL запросе SELECT students.id,students.name,join_table1.id as j_id,join_table1.name as j_name,join_table2.id as j_id,join_table2.name as j_name FROM students LEFT JOIN join_table1 ON teachers.id=join_table1.id LEFT JOIN join_table2 ON join_table1.id=join_table2.id WHERE students.name='Masha'AND students.surname NOT IN (SELECT id FROM teachers WHERE id=1) AND join_table1.name='sasha'AND join_table2.name='sasha' ORDER BY students.id ASC,students.name DESC LIMIT 1- 1054 Unknown column 'teachers.id' in 'on clause'
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 30
+fault:2021-09-27 14:58:57-Ошибка в SQL запросе SELECT students.id,students.name,join_table1.id as j_id,join_table1.name as j_name,join_table2.id as j_id,join_table2.name as j_name FROM students LEFT JOIN join_table1 ON teachers.id=join_table1.id LEFT JOIN join_table2 ON join_table1.id=join_table2.id WHERE students.name='O\'henry'AND students.surname NOT IN (SELECT id FROM teachers WHERE id=1) AND join_table1.name='sasha'AND join_table2.name='sasha' ORDER BY students.id ASC,students.name DESC LIMIT 1- 1054 Unknown column 'teachers.id' in 'on clause'
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 30
+fault:2021-09-27 16:06:55-Ошибка в SQL запросе SELECT students.id,students.name FROM students  WHERE students.name'O\'henry'  LIMIT 1- 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''O\'henry'  LIMIT 1' at line 1
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 30
+fault:2021-09-28 14:29:16-Ошибка в SQL запросе SELECT students.id,students.name FROM students  WHERE students.name'O\'henry'  LIMIT 1- 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''O\'henry'  LIMIT 1' at line 1
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 30
+fault:2021-09-28 14:29:19-Ошибка в SQL запросе SELECT students.id,students.name FROM students  WHERE students.name'O\'henry'  LIMIT 1- 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''O\'henry'  LIMIT 1' at line 1
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 30
+fault:2021-09-28 14:34:05-Ошибка в SQL запросе SELECT students.id,students.name FROM students  WHERE students.name'O\'henry'  LIMIT 1- 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''O\'henry'  LIMIT 1' at line 1
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 30
+fault:2021-09-28 14:34:20-Ошибка в SQL запросе SELECT students.id,students.name FROM students  WHERE students.name'O\'henry'  LIMIT 1- 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''O\'henry'  LIMIT 1' at line 1
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 30
+fault:2021-09-28 14:35:02-Ошибка в SQL запросе SELECT students.id,students.name FROM students  WHERE students.name'O\'henry'  LIMIT 1- 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''O\'henry'  LIMIT 1' at line 1
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 30
+fault:2021-10-07 14:20:30-Ошибка в SQL запросе INSERT INTO students (second_file,) VALUES ()- 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') VALUES ()' at line 1
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 36
+fault:2021-10-07 14:21:24-Ошибка в SQL запросе INSERT INTO students (second_file,) VALUES ()- 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') VALUES ()' at line 1
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 36
+fault:2021-10-07 14:21:42-Ошибка в SQL запросе INSERT INTO students (second_file,) VALUES ()- 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') VALUES ()' at line 1
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 36
+fault:2021-10-07 14:27:16-Ошибка в SQL запросе INSERT INTO students (name,content,main_file,second_file,) VALUES ('Masha','done','file1.jpg','file2.jpg',)- 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') VALUES ('Masha','done','file1.jpg','file2.jpg',)' at line 1
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 36
+fault:2021-10-07 15:11:39-Ошибка в SQL запросе INSERT INTO students (name,content,main_file,second_file) VALUES ('Masha','done','file1.jpg','file2.jpg')- 1054 Unknown column 'main_file' in 'field list'
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 36
+fault:2021-10-07 15:13:02-Ошибка в SQL запросе INSERT INTO students (name,content,main_photo,second_foto) VALUES ('Masha','done','file1.jpg','file2.jpg')- 1054 Unknown column 'second_foto' in 'field list'
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 36

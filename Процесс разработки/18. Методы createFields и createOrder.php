@@ -55,7 +55,7 @@ protected function createFields($table = false, $set){
     $fields = ''; //определяем переменную с полями
 
     foreach($set['fields'] as $field){ //разбираем массив с полями, поданный в функции
-        $fields .= $table . $fields; //заполняем переменную с полями в форме название таблицы.название поля(с запятой в конце, которая 
+        $fields .= $table . $field . ','; //заполняем переменную с полями в форме название таблицы.название поля(с запятой в конце, которая 
         //потом обрежется)
     }
     return $fields;
@@ -95,3 +95,12 @@ protected function createFields($table = false, $set){
     }
 }
 } 
+
+// Небольшое изменение:
+//     Если будет объединение запросов с помощью UNION, типа
+//         (SELECT t.1 name, t.2 fio FROM t1 JOIN LEFT t2 ON t1.parent_id = t2.id WHERE t1.parent.id = 1)
+//         UNION
+//         (SELECT t.1 name, t.2 fio FROM t1 JOIN LEFT t2 ON t1.parent_id = t2.id WHERE t1.parent.id = 2),
+//         то сортировка ORDER BY t1.name ASC не сработает, надо писать сортировку по порядковому номеру поля:
+//         ORDER BY 1 ASC
+
