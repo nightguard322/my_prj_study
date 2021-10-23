@@ -31,6 +31,7 @@ class BaseModel extends BaseModelMethods
     final public function query($query, $crud = 'r', $return_id = false){
 
         $result = $this->db->query($query);
+        print_arr($result);
 
         if($this->db->affected_rows === -1){
             throw new DbException('Ошибка в SQL запросе ' . $query . '- ' . $this->db->errno . ' ' . $this->db->error);

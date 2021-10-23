@@ -106,3 +106,6 @@ at line 56
 fault:2021-09-14 14:15:46-Class core\plugins\shop\IndexController does not exist
 file C:\xampp\htdocs\project\core\base\controller\BaseController.php
 at line 56
+fault:2021-10-18 09:47:22-Class core\plugins\shop\IndexController does not exist
+file C:\xampp\htdocs\project\core\base\controller\BaseController.php
+at line 56

@@ -14,6 +14,7 @@ trait BaseMethods
             }
         }
     }
+    
     protected function clearNum($num){
         return $num * 1;
     }
@@ -46,7 +47,28 @@ trait BaseMethods
         file_put_contents('logs/' . $file, $str, FILE_APPEND);
     }
 
+    protected function showColumn($table){
 
+        $query = "SHOW COLUMN FORM $table";
+
+        $res = $this->query($query);
+
+        $columns = [];
+
+        if($res){
+
+            foreach($res as $row){
+
+                $columns[$row['Field']] = $row;
+
+                if($row['key'] === 'PRI') $columns['id_row'] = $row['Field'];
+            }
+           
+            return $columns;
+        }
+
+
+    }
 
 
 }

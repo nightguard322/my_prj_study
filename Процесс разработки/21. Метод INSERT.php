@@ -20,7 +20,7 @@ Class project_l21 //<--не обращать внимания, тут класс
      *@return mixed - вернется либо true/false, либо какое то значение (int)
      */
 
-     final public function add($table, $set){
+     final public function add($table, $set = []){
 
 
         $set['fields'] = is_array($set['fields']) && !empty($set['fields']) ? $set['fields'] : false; //проверяем есть ли такой массив и не пуст ли
