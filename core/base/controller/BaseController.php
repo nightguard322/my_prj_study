@@ -81,7 +81,6 @@ abstract class BaseController
 
     protected function getPage(){
         if(is_array($this->page)){
-            print_arr($this->page);
             foreach($this->page as $block) echo $block;
         }else{
             echo $this->page;

@@ -89,7 +89,49 @@ Class project_l22 //<--не обращать внимания, тут класс
 
     }
 
+    //Вспомогательная функция createUpdate
 
+    protected function createUpdate($fields, $files, $except){
+
+        $update = '';
+
+        if($files){
+
+            foreach($files as $row => $file){
+
+                if($except && in_array($row, $except)) continue;
+
+                $update .= $row . '=';
+
+                if(in_array($file, $this->sqlFunc)){
+                    
+                    $update .= $field . ',';
+                
+                }else{
+
+                    $update .= "'" . addslashes($field) . "',"; 
+                }
+            }
+
+        }
+
+        if($files){
+
+            foreach($files as $row => $file){
+
+                $update .= $row . '=';
+
+                if(is_array($file)) $update .= "'" . addslashes(json_encode($file)) . "',";
+                    else $update .= "'" . addslashes($file) . "',";
+            }
+        }
+
+        return rtrim($update, ',');
+
+            
+
+        }
+    }
 
 
 }

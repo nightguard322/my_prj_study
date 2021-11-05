@@ -4,6 +4,7 @@ namespace core\base\models;
 
 use core\base\controller\Singleton;
 use core\base\exсeptions\DbException;
+use core\base\controller\BaseMethods;
 
 class BaseModel extends BaseModelMethods
 {
@@ -31,7 +32,6 @@ class BaseModel extends BaseModelMethods
     final public function query($query, $crud = 'r', $return_id = false){
 
         $result = $this->db->query($query);
-        print_arr($result);
 
         if($this->db->affected_rows === -1){
             throw new DbException('Ошибка в SQL запросе ' . $query . '- ' . $this->db->errno . ' ' . $this->db->error);
@@ -95,7 +95,7 @@ class BaseModel extends BaseModelMethods
         return $this->query($query);
     }
 
-    final public function uQuery($set, $table){
+    final public function iQuery($set, $table){
 
         $set['fields'] = is_array($set['fields']) && !empty($set['fields']) ? $set['fields'] : $_POST;
         $set['files'] = is_array( $set['files']) && !empty( $set['files']) ? $set['files'] : false;
@@ -116,15 +116,49 @@ class BaseModel extends BaseModelMethods
 
     }
 
-    final public function showColumns($table){
+    final public function uQuery($set, $table){
 
-        $query = "SHOW COLUMNS FROM $table";
+        $set['fields'] = is_array($set['fields']) && !empty($set['fields']) ? $set['fields'] : $_POST;
+        $set['files'] = is_array( $set['files']) && !empty( $set['files']) ? $set['files'] : false;
 
-        $res = $this->query($query);
+        if(!$set['fields'] && !$set['files']) exit('field - пусто');
+        
+        $set['except'] = $set['except'] ? $set['except'] : false;
 
-        exit();
-        $columns = '';
-    }
+        if(!$set['all_rows']){
+
+            if($set['where']){
+
+                $where = $this->createWhere($set);
+            }else{
+
+                $columns = $this->showColumns($table);
+
+                if(!$columns) return false;
+
+                if($columns['id_row'] && $set['fields'][$columns['id_row']]){
+
+                    $where = 'WHERE' . $columns['id_row'] . '=' . $set['fields'][$columns['id_row']];
+
+                    unset($set['fields'][$columns['id_row']]);
+
+                }
+
+            }
+
+            $update = $this->createUpdate($set['fields'], $set['files'], $set['except']);
+
+            $query = "UPDATE $table SET $update $where";
+
+            return $this->query($query, 'u');
+
+        }
+
+
+
+
+            }
+
 
     /**
      * @param $table - таблица для вставки данных
@@ -137,4 +171,28 @@ class BaseModel extends BaseModelMethods
      * return_id => true | false - возвращать или нет идентификатор вставленной записи
      *@return mixed - вернется либо true/false, либо какое то значение (int)
      */
+    final public function showColumns($table){
+
+        print_arr($table);
+        
+        $query = "SHOW COLUMNS FROM $table";
+
+        $res = $this->query($query);
+
+        $columns = [];
+
+        if($res){
+             
+            foreach ($res as $row){
+
+                $columns[$row['Field']] = $row;
+
+                if($row['Key'] === 'PRI') $columns['id_row'] = $row['Field'];
+
+            }
+        }
+
+        return $columns;
+
+    }
 }

@@ -9,11 +9,11 @@ class IndexController extends BaseController
 {
     protected function inputData(){
         $db = Model::instance();
+
         echo 'юзерский дефолт контроллер <br>';
 
         $table = 'students';
-        $files = ['main_photo' => '111.jpg'];
-        $files['second_photo'] = '222.jpg';
+
         // $res = $db->sQuery(
         // [
         //     'fields' => ['id', 'name'],
@@ -55,7 +55,13 @@ class IndexController extends BaseController
         //         ] 
         // ], $table);
 
-        $res = $db->showColumns($table);
+        $res = $db->uQuery([
+            'fields' => 
+                ['name' => 'Default'],
+            'files' => 
+                ['main_photo' => 'default-main',
+                'second_photo' => 'default-s1econd']
+        ], $table);
 
         exit('id: ' . $res['id'] . ', name =' . $res['name'] );
     }

@@ -285,3 +285,15 @@ at line 36
 fault:2021-10-07 15:13:02-Ошибка в SQL запросе INSERT INTO students (name,content,main_photo,second_foto) VALUES ('Masha','done','file1.jpg','file2.jpg')- 1054 Unknown column 'second_foto' in 'field list'
 file C:\xampp\htdocs\project\core\base\models\BaseModel.php
 at line 36
+fault:2021-10-25 13:54:03-Ошибка в SQL запросе SHOW COLUMN FROM students- 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'COLUMN FROM students' at line 1
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 37
+fault:2021-10-26 08:03:59-Ошибка в SQL запросе UPDATE students SET  - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 37
+fault:2021-10-26 08:15:24-Ошибка в SQL запросе SHOW COLUMNS FROM Array- 1146 Table 'cms.array' doesn't exist
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 37
+fault:2021-10-26 08:16:30-Ошибка в SQL запросе SHOW COLUMNS FROM Array- 1146 Table 'cms.array' doesn't exist
+file C:\xampp\htdocs\project\core\base\models\BaseModel.php
+at line 37

@@ -5,6 +5,8 @@ namespace core\base\models;
 Abstract class BaseModelMethods
 {
 
+    protected $sqlFunc = ['NOW'];
+
     protected function createFields($set, $table = false){
 
 
@@ -142,6 +144,7 @@ Abstract class BaseModelMethods
         $fields = '';
         $join = '';
         $where = '';
+        $tables = '';
 
         if($set['join']){
 
@@ -226,6 +229,11 @@ Abstract class BaseModelMethods
                 if(in_array($field, $sqlFunc)){
                     
                     $insert_arr['values'] .= $field . ",";
+                
+                }elseif($field === NULL){
+
+                    $insert_arr['values'] .= "NULL";
+
                 }else{
 
                     $insert_arr['values'] .= "'" . addslashes($field) . "',";
@@ -257,6 +265,41 @@ Abstract class BaseModelMethods
         return $insert_arr;
     }
 
+
+    protected function createUpdate($fields, $files, $except){
+        
+        $update = [];
+
+        if($fields){
+
+            foreach($fields as $row => $field){
+
+                if($except && in_array($row, $except)) continue;
+
+                $update = $row . '=';
+                
+                if(in_array($field, $this->sqlFunc)) $update .= $field . ',';
+                    else $update .= "'" . addslashes($field) . "',";
+
+                }
+            }
+            if($files){
+
+                foreach($files as $row => $file){
+
+                    $update .= $row . '=';
+
+                    if(is_array($file)) $update .= "'" . addslashes(json_encode($file)) . "',";
+                        else $update .= "'" . addslashes($file) . "',";
+                }
+
+        }
+
+        return rtrim($update, ',');
+
+
+
+    }
 // 'join' => [
 //     [ //тут можно указать как имя таблицы (join_table1)так и номер (порядок в ассоциативном массиве),
 //         //т.к. может возникнуть ситуация, что придется стыковать таблицу саму к себе через третью, а 
@@ -286,5 +329,5 @@ Abstract class BaseModelMethods
 //             //можно явно не писать название таблицы и что это поля, метод и сам это определит
 //         ]
 //     ],
-
+    
 }

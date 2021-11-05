@@ -83,7 +83,7 @@ Class project_l21 //<--не обращать внимания, тут класс
 
                 foreach($files as $row => $file){
 
-                    $insertArr['fields'] = $row;
+                    $insertArr['fields'] .= $row;
 
                     if(is_array($file)) $insertArr['values'] .= "'" . addslashes(json_encode($file)) . "',";
                         else $insertArr['values'] .= "'" . addslashes($file) . "',";
