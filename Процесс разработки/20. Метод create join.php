@@ -9,7 +9,6 @@ Class project_l20 //<--не обращать внимания, тут класс
         else $order_by .= $table . $order . ' ' . $order_direction . ',';
 
 
-
     //Перед появлением join - запрос where может и не существовать
 
     //Для этого в sQuery ведем проверку: 

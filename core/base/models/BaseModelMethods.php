@@ -278,8 +278,14 @@ Abstract class BaseModelMethods
 
                 $update = $row . '=';
                 
-                if(in_array($field, $this->sqlFunc)) $update .= $field . ',';
-                    else $update .= "'" . addslashes($field) . "',";
+                if(in_array($field, $this->sqlFunc)){
+                   
+                    $update .= $field . ',';
+                    
+                }elseif($field === NULL){
+                    $update .= "field" . ',';
+
+                }else{ $update .= "'" . addslashes($field) . "',";
 
                 }
             }
